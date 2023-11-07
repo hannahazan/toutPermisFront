@@ -6,7 +6,7 @@ const TestDeploy=()=>{
     console.log("ça fonctionne bien")
     const onSubmit=()=>{
         axios
-        .post("https://toutpermisback-production.up.railway.app/Users")
+        .get("https://toutpermisback-production.up.railway.app/Users")
         .then((response)=>{(console.log(response.data))     
         })
         .catch(error => {
