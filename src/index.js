@@ -21,6 +21,7 @@ import EditBlog from './Pages/EditBlog';
 import Messagerie from './Pages/Messagerie';
 import ContactMessagerie from './Pages/ContactMessagerie';
 import socketIO from 'socket.io-client';
+import TestDeploy from './Pages/testDeploy.js';
 
 const socket = socketIO.connect('http://localhost:4000');
 
@@ -48,6 +49,7 @@ root.render(
           <Route path='/espacepro/inscriptionChoix/inscriptionFinale/profil/Fiche' exact element={<Fiche/>}></Route>
           <Route path='/connexion' element={<Connexion/>}></Route>
           <Route path='/EditBlog' element={<EditBlog/>}></Route>
+          <Route path='/testDeploy' element={<TestDeploy/>}></Route>
           <Route path='/Messagerie' element={<Messagerie socket={socket}/>}></Route>
           <Route path='/ContactMessagerie' element={<ContactMessagerie socket={socket}/>}></Route>
       </Routes>
