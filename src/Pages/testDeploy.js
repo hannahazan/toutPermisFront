@@ -3,10 +3,11 @@ import { useState,useEffect} from 'react';
 
 
 const TestDeploy=()=>{
+    let apiFetch="https://toutpermisback-production.up.railway.app"
     console.log("ça fonctionne bien")
     const onSubmit=()=>{
         axios
-        .get("https://toutpermisback-production.up.railway.app/Users")
+        .get(`${apiFetch}/Users`)
         .then((response)=>{(console.log(response.data))     
         })
         .catch(error => {
