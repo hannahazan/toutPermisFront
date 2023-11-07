@@ -11,7 +11,7 @@ const TestDeploy=()=>{
         })
         .catch(error => {
         console.log(error);
-        alert("Oops!Cette adresse e-mail est déjà utilisée!")
+        alert("Oops!wrong path!")
         })
     }
     useEffect(()=>{
