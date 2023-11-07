@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Crimson+Text&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,400;1,500;1,600;1,900&family=Poppins:wght@200;500&display=swap');
+
+.navbar{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    padding-left:16px;
+    background-color: white;
+    z-index: 99;
+    margin: 0px;   
+  }
+  .burger{
+    height: 42px;
+    margin-left: 0px;
+    margin-top: 5px;
+    filter: invert(28%) sepia(100%) saturate(312%) hue-rotate(135deg) brightness(92%) contrast(86%);
+    margin-right: 18px;
+  }
+  .logoParaPicto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+  }
+  .logoParaPicto2{
+    display: none;
+  }
+  .picto{
+    width: 24px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+  }
+  .LogoSphère{
+    width:32px
+  }
+  .Volant{
+    width: 18px;
+    height: 16px;
+    position: relative;
+    right: 25px;
+    top: 10px;
+  }
+  .tout{
+    margin: 0px;
+    color: #236468;
+    font-weight: 400;
+    font-size: 35px;
+    margin-left: 13px;
+   
+  }
+  .permis{
+    margin: 0px;
+    color: #37beb4;
+    font-weight: 400;
+    font-size: 35px;
+    
+  }
+  .paraLogo{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  .loginContainer{
+    width: 36%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .login{
+    width: 25px; 
+    filter: invert(21%) sepia(13%) saturate(4828%) hue-rotate(145deg) brightness(101%) contrast(94%);
+  }
+  /*******************************ouverture du menu burger******************************************************/
+  .menuEscamotable{
+    display: none;
+  }
+  .menuEscamotable2{
+    background-color:#236468;
+    position: absolute;
+    z-index: 9999;
+    height: 350%;
+    width: 100%;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+  }
+  
+  
+  .menuEscamotable2 ul{
+    list-style-type:none;
+    position:fixed;
+    top: 22%;
+    color:white;
+    padding: 0px;
+    font-size: 25px;
+  }
+ 
+  
+  .menuEscamotable2 ul li{
+    margin-bottom: 30px;
+    color: white;
+  }
+  
+ 
+  .cross{
+    width: 45px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(19deg) brightness(104%) contrast(100%);
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  .liMenuNone{
+    display:none
+  }
+/*********************************connecté/inscrit***********************************************/
+.non{
+    display:none
+  }
+.pictoLogoEspaceProNav{
+  
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  margin-top: 5px;
+  left: 267px;
+}
+.localLogoPictoProfilNav{
+  height: 45px;
+}
+.profilPictureNav{
+  border-radius: 100%;
+  width: 26px;
+  height: 26px;
+  position: relative;
+  right: 32px;
+  bottom: 3px;
+}
+.containerInitialesNav{
+  background-color: #e8fefb;
+    border-radius: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 32px;
+    bottom: 3px;
+    width: 27px;
+    height: 27px;
+    color: #236468;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.containerLinkAdmin{
+  display:flex;
+  flex-direction: column;
+  color:#37beb4;
+  align-items: flex-end;
+}
+.noneContainerLinkAdmin{
+  display:none;
+}
+.containerLinkAdmin p{
+  color:#e8fefb
+}
+.LinkAdminP{
+  color: white;
+  font-weight: 100;
+}
+#LinkAdminLi{
+  margin-bottom: 0px !important;
+}
+#PEditLinkAdmin{
+  position: relative;
+  right: 29px;
+}

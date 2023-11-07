@@ -1,0 +1,1574 @@
+.fiche{
+    height: fit-content;
+    margin:0px;
+    padding: 0px;
+    background: linear-gradient(white,#FcF3F1);
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.fiche2{
+    height: fit-content;
+    margin:0px;
+    padding: 0px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.mainFiche{
+    margin-left: left;
+    height: fit-content;
+    text-align: start;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 176px;
+}
+.mainFiche2{
+  display: none;
+}
+
+.titreFiche{
+    color:#236468;
+    font-size: 35px;
+    text-align: center;
+    font-weight: normal;
+   
+}
+.accompagnéP{
+    color: #236468;
+    line-height: 19px;
+    font-weight: lighter;
+  
+}
+.accompagnéP2{
+  display:none
+}
+.labelNombreEcole{
+    color: #236468;
+    font-size: 17px;
+   
+}
+.inputNombreEcole{
+    width: 15%;
+    height: 45px;
+    border-radius: 8px;
+    padding: 0px;
+    margin: 0px;
+    border-color: #dfe1e6;
+    border: 1px solid #dfe1e6;
+    font-family: 'Poppins';
+    padding-left: 15px;
+    color: #236468;
+    background-color: #f8f9f9;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  .containerInputLabelNombreEcole{
+    display: flex;
+    flex-direction: column;
+  }
+  /********************************************informations*****************************************************************/
+  .containerInformations{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+  .pInformations{
+    color: #236468;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  .containerOngletNbreEcole{
+    display: flex;
+    flex-direction: row;
+    color: #236468;
+    font-size: 20px;
+  }
+  
+  
+.containerCouvUpload{
+  height: 170px;
+  width: 111%;
+  position: relative;
+  right: 4%;
+  margin-top: 20px;
+}
+.uploadHidden{
+  position: relative;
+  bottom: 35px;
+  left: 182px;
+  width: 180px;
+  top: -93px;
+  height: 25px;
+  z-index: 2;
+  opacity: 0;
+}
+.imgCouverture{
+  width: 100%;
+  position: relative;
+  height: 100%;
+
+}
+  
+.uploadFront{
+  width: 184px;
+  height: 27px;
+  border-radius: 15px;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Poppins';
+  background-color: #37beb4;
+  font-size: 20px;
+  position: relative;
+  left: 176px;
+  top: -120px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+
+}
+.uploadLogo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  color: white;
+  background-color: #95B63A;
+  font-size: 32px;
+  position: relative;
+  top: -179px;
+  left: 12px;
+}
+.uploadLogo p{
+  margin: 0px;
+}
+.uploadLogoHidden{
+  position: relative;
+  top: -78px;
+  left: 98px;
+  width: 176px;
+  z-index: 2;
+  opacity: 0;
+}
+.uploadfrontLogo{
+  width: 184px;
+  height: 27px;
+  border-radius: 15px;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Poppins';
+  background-color: #37beb4;
+  font-size: 20px;
+  position: relative;
+  top: -103px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  left: 93px;
+}
+.buttonUpload{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  background-color: #37beb4;
+  position: relative;
+  top: 38px;
+ 
+}
+.pR{
+  color: white;
+}
+.EC{
+  margin-right:10px;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+.ECSelectionne{
+  margin-right:10px;
+  margin-top:0px;
+  margin-bottom:0px;
+  color:#37beb4
+}
+.buttonValidBoxcase{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 36%;
+  height: 30px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  background-color: #37beb4;
+  align-self: self-end;
+  margin-top: 13px; 
+}
+.buttonValidBoxcaseModifOk{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 74%;
+  height: 30px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  background-color: #37beb4;
+  align-self: self-end;
+  margin-top: 13px; 
+}
+.buttonValidBoxcase2{
+  display: none;
+}
+.pTEAndLogoMinus{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  font-size: 23px;
+  align-items: center;
+  height: 50px;
+}
+.pTEAndLogoMinus p{
+  margin-bottom: 20px;
+}
+.containerButtonAndBoxcase{
+  display: flex;
+  flex-direction: column;
+  
+}
+.containercheckBoxAndP{
+  color: #236468;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: lighter;
+}
+.containercheckBoxAndP2{
+  display: none;
+}
+.containercheckBoxAndP p{
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+.checkBoxFalse{
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 6px;
+  border: 2px solid #ebecf0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.checkBoxTrue{
+  width: 35px;
+  height: 35px;
+  background-color: #37beb4;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ebecf0;
+}
+.checkTrue{
+  width: 15px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(19deg) brightness(104%) contrast(100%)
+}
+.checkFalse{
+  display: none;
+}
+.minus{
+  font-size: 25px;
+  margin-bottom: 0px !important; 
+  margin-top: 0px !important;
+}
+.containerButtonAndBoxcase2{
+  display: none;
+}
+.containerMinus{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebecf0;
+  border-radius: 100%;
+}
+.pNDAndLogoMinus{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  font-size: 23px;
+  align-items: center;
+  height: 50px;
+ 
+}
+.pNDAndLogoMinus p{
+  margin-bottom: 20px;
+}
+.inputNom{
+  width: 94%;
+  height: 50px;
+  border-radius: 8px;
+  padding: 0px;
+  margin: 0px;
+  border-color: #dfe1e6;
+  border: 1px solid #dfe1e6;
+  font-family: 'Poppins';
+  padding-left: 15px;
+  color: #236468;
+  background-color: #f8f9f9;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.inputDescriptif{
+  width: 94%;
+  height: 290px;
+  border-radius: 8px;
+  padding: 0px;
+  padding-top:10px ;
+  margin: 0px;
+  border-color: #dfe1e6;
+  border: 1px solid #dfe1e6;
+  font-family: 'Poppins';
+  padding-left: 15px;
+  color: #236468;
+  background-color: #f8f9f9;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.containerNomDescription{
+  display: none;
+}
+.containerNomDescription2{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  padding-top: 16px;
+}
+.containerFormFormation{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+.pLocalAndLogoMinus{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  font-size: 23px;
+  align-items: center;
+  height: 50px;
+}
+.containerLocalisation{
+  display: none;
+}
+.containerLocalisation2{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.pContactAndLogoMinus{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  font-size: 23px;
+  align-items: center;
+  height: 50px;
+}
+/***********************************horaires**********************************************************/
+.containerOngletBureauConduite{
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
+.containerOngletBureauConduite p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color:#6d888a;
+  margin-right: 35px;
+}
+.bureauTrue{
+  color: #37beb4 !important;
+}
+.bureauFalse{
+  color: #6d888a !important;
+}
+.liseretHoraires{
+  width: 100%;
+  height: 2px;
+  background-color: #dfe1e6;
+}
+.containerLiseretOnglet{
+  display: flex;
+  flex-direction: column;
+}
+.liseretOngletSelectionne{
+  width: 73px;
+  height: 2px;
+  background-color: #37beb4;
+}
+.liseretOngletSelectionne2{
+  display:none
+}
+.liseretOngletSelectionneConduite{
+  width: 94px;
+  height: 2px;
+  background-color: #37beb4;
+}
+.liseretOngletSelectionneConduite2{
+  display: none;
+}
+.containerBoxHorairesDay{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #236468;
+  font-size: 18px;
+  margin-bottom: 15px;
+  width: 372px;
+ 
+}
+.containerBoxHorairesDay p{
+  margin: 0px;
+}
+.containerDropBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.Horaires2{
+  margin-right: 20px;
+    width: 95px;
+    height: 50px;
+    /* border-radius: 13px; */
+    border: 1px solid #dfe1e6;
+    border-radius: 8px;
+    background-color: #f8f9f9;
+    /* padding: 0px; */
+    font-family: 'Poppins';
+    color: #6d888a;
+    background-image: url('../images/iconsAwesome/caret-down-solid.svg');
+    background-size: 40% 40%;
+    background-repeat: no-repeat;
+    background-position-x: 59px;
+    background-position-y: 14px;
+    -webkit-appearance: none;
+    font-size: 17px;
+    padding-left: 10px;
+}
+
+.ArrowDrop{
+  filter: invert(60%) sepia(11%) saturate(664%) hue-rotate(136deg) brightness(83%) contrast(78%);
+  width: 20px;
+}
+.containerHorairesCalendar{
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  color: #236468;
+}
+.containerHorairesBureau2{
+  display:none
+}
+.containerHorairesBureau{
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  padding-top: 16px;
+  width: 100%;
+}
+.containerHorairesConduite{
+  display: flex;
+  flex-direction: column;
+}
+.containerHorairesConduite2{
+  display:none
+}
+/********************formations******************************************/
+.pFormationAndLogoMinus{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  font-size: 23px;
+  align-items: center;
+  height: 50px;
+}
+.containerFormation{
+  display: flex;
+  flex-direction: column;
+}
+.containerOngletsFormation{
+  display: flex;
+  flex-direction: row;
+  width: 356px;
+}
+.categorieOngletandLiseret{
+  display: flex;
+  flex-direction:column;
+  color:#236468;
+  font-size: 20px;
+  margin-right: 15px;
+}
+.categorieOngletandLiseret2{
+  display: flex;
+  flex-direction:column;
+  color:#37beb4;
+  font-size: 20px;
+  margin-right: 15px;
+}
+.categorieOngletandLiseret p{
+  margin:0px
+}
+.categorieOngletandLiseret2 p{
+  margin: 0px;
+}
+.liseretCateg{
+  height: 2px;
+  background-color:#37beb4;
+  width: 50px;
+}
+.liseretCateg2{
+  display: none;
+}
+.containerFormation2{
+  display: none;
+}
+.pForfaitAndLogoMinus{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  font-size: 17px;
+  align-items: center;
+  height: 50px;
+  margin-top: 15px;
+}
+.pForfaitAndLogoMinus p{
+  margin:0px;
+  
+}
+/***************Etablissements**************/
+.containerEtablissements{
+  display: flex;
+  flex-direction: column;
+}
+.containerFormations{
+  display: flex;
+  flex-direction: column;
+}
+.containerArray{
+  display: flex;
+  flex-direction: row;
+}
+/***********************ajouter une école*******************************/
+.buttonAddEcole{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 12px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  background-color: #37beb4;
+}
+.buttonAddEcole2{
+  display: none;
+}
+
+.containerNomEtaButtonValider{
+  display: flex;
+  flex-direction: column;
+}
+.containerNomEtaButtonValider2{
+  display: none;
+}
+.containerInformations2{
+  display: none;
+}
+/**********************************************/
+.containerTitreLien{
+  display: flex;
+  flex-direction: column;
+}
+.containerTitreLien2{
+  display:none
+}
+.containerTitreArrow{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+}
+.arrowFicheReturn{
+  filter: invert(60%) sepia(99%) saturate(290%) hue-rotate(126deg) brightness(89%) contrast(89%);
+  transform: rotate(180deg);
+  width: 35px;
+  position: relative;
+  right: 15px;
+  align-items: center;
+  top: 5px;
+}
+.containerFicheName{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+
+}
+.pAllerFiche{
+  font-size: 25px;
+  color: #236468;
+  margin: 0px;
+}
+
+.pLienFiche{
+  font-size: 30px;
+  color: #37beb4;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: start;
+ 
+}
+.liseretLien{
+  width: 100%;
+  margin-bottom: 10px;
+  height: 2px;
+  background-color: #ebecf0;
+  margin-top: 10px;
+}
+.iconLien{
+  filter: invert(21%) sepia(13%) saturate(4828%) hue-rotate(145deg) brightness(101%) contrast(94%);
+  width: 20px;
+}
+.containerIconLienFiche{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20%;
+}
+
+/****************************popUp**************************************/
+.containerPopupSupprimerFiche{
+  height: 200%;
+  width: 104%;
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8f3ff;
+  text-align: center;
+  font-size: 30px;
+  color: #236468;
+  bottom: 500px;
+  right: 15px;
+}
+/**********nouvelle position en fonction d'où la poup est déclenchée*************************/
+.containerDeplacementPopUp{
+  position: fixed;
+  top:300px;
+}
+
+.containerPopupSupprimerFiche p{
+  margin:0px
+}
+.pValuePopUp{
+  color: #37beb4;
+}
+.containerPopupSupprimerFiche2{
+  display: none;
+}
+.containerButtonPopUpSup{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+.ButtonPopUpSupNon{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+  height: 45px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 12px;
+  align-items: center;
+  font-size: 25px;
+  font-weight: normal;
+  margin-top: 20px;
+  background-color: #37beb4;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ButtonPopUpSupOui{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+  height: 45px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 12px;
+  align-items: center;
+  font-size: 25px;
+  font-weight: normal;
+  margin-top: 20px;
+  background-color: #37beb4;
+  margin-right: 10px;
+    margin-left: 24px
+}
+/*********************************button valider se transforme**************************************************/
+.buttonValidBoxcaseModif{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 66%;
+  height: 30px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  background-color: #37beb4;
+  align-self: self-end;
+  margin-top: 13px;
+}
+.buttonValidBoxcaseModif2{
+  display:none
+}
+
+/*********************************Formations**********************************************************/
+.pFormationFiche{
+  color:#236468;
+  font-size: 20px; 
+}
+.buttonAjouter{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 42%;
+  height: 21px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: normal;
+  background-color: #e8937c;
+  
+}
+.buttonAjouter2{
+  display: none;
+}
+.buttonAjouter3{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 42%;
+  height: 21px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: normal;
+  background-color: #e8937c;
+  align-self:self-end;
+  margin-top: 20px 
+}
+.containerIconFormationPrixFiche{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 34%;
+  color: #37beb4;
+  font-size: 18px;
+}
+.containerIconFormationPrixFiche p{
+    margin: 0px;
+}
+.liseretFormation{
+  width: 100%;
+  height: 2px;
+  background-color: #ebecf0;
+}
+.pForfaitsMap{
+  font-size: 15px;
+  color: #236468;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: start;
+  margin-right: 8%;
+}
+.containerNomPrixFormationFiche{
+  display:flex;
+  flex-direction: row;
+  color:#8fa6a7;
+  font-size: 18px;
+}
+.containerNomPrixFormationFicheStages{
+  display: flex;
+  flex-direction: row;
+  color: #8fa6a7;
+  font-size: 18px;
+  justify-content: space-between;
+  width: 76%;
+}
+.containerNomPrixFormationFicheStages p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 5%;
+}
+.containerNomPrixFormationFiche p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 5%;
+}
+.containerForfaitMapFiche{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+.iconForfaitFiche{
+  filter: invert(21%) sepia(13%) saturate(4828%) hue-rotate(145deg) brightness(101%) contrast(94%);
+  width: 15px;
+}
+.PNouveauForfaitFiche{
+  color: #6d888a;
+  font-size: 17px;
+}
+.containerNomPrixFormationFiche2{
+  display:none
+}
+.containerIconForfaitFiche{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width:45%
+}
+.fermerFormFormationModifFiche{
+  filter: invert(60%) sepia(99%) saturate(290%) hue-rotate(126deg) brightness(89%) contrast(89%);
+  width:28px;
+  align-self: flex-end;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.buttonValidModifForm{
+  padding: 0px;
+    margin: 0px;
+    border: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 67%;
+    height: 30px;
+    font-family: 'Poppins';
+    color: white;
+    border-radius: 15px;
+    align-items: center;
+    font-size: 17px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    background-color: #37beb4;
+    align-self: self-end;
+    margin-top: 13px;
+}
+.containerpDescriptifFicheModificonForfaitFiche{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f8f9f9;
+  border: solid 1px #dfe1e6;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 12px;
+}
+.containerpDescriptifFicheModificonForfaitFiche2{
+  display:none
+}
+.pDescriptifFicheModif{
+  width: 260px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 18px;
+  color: #37beb4;
+}
+.containerPrixNomFormation{
+  border: solid 1px #dfe1e6;
+  border-radius: 10px;
+  padding-bottom: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  background-color: #f8f9f9;
+}
+.containerPrixNomFormation2{
+  display: none;
+}
+.containerModifFormationPAndCross{
+  display:flex;
+  flex-direction: row;
+  color:#236468;
+  font-size: 24px;
+}
+.containerModifFormationPAndCross p{
+  margin-top: 0px;
+}
+
+.containerModifFormationPAndCross2{
+  display: none;
+}
+.fermerFormFormationModifFiche2{
+  filter: invert(60%) sepia(99%) saturate(290%) hue-rotate(126deg) brightness(89%) contrast(89%);
+  width: 28px;
+  align-self: flex-end;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  position: relative;
+  left: 60px;
+  bottom: 13px;
+}
+.buttonValidBoxcaseModif3{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 36%;
+  height: 30px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  background-color: #37beb4;
+  align-self: self-end;
+  margin-top: 13px;
+}
+.buttonAjouterMembre{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 66%;
+  height: 21px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: normal;
+  background-color: #e8937c;
+ margin-top: 15px;
+}
+.buttonAjouterMembreBottom{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 66%;
+  height: 21px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: normal;
+  background-color: #e8937c;
+  align-self: self-end;
+}
+.UploadEquipe{
+  position: relative;
+  z-index: 1;
+  top: 37px;
+  height: 50px;
+  margin: 0px;
+  opacity: 0;
+}
+.PhotoEquipe{
+  height: 40px;
+  text-align: center;
+  width: 240px;
+  padding-top: 10px;
+  background-color: #37beb4;
+  color: white;
+  border-radius: 15px;
+  font-size: 19px;
+  position: relative;
+  bottom: 22px;
+}
+
+.containerEquipeInfo{
+  display: flex;
+  flex-direction: row; 
+  overflow-x: scroll;
+  margin-bottom: 35px;
+  margin-top: 15px;
+}
+.containerEquipeInfo3{
+  display: flex;
+  flex-direction: row; 
+  overflow-x: scroll;
+  margin-bottom: 35px;
+  margin-top: 15px;
+  justify-content: center;
+}
+.picEquipe{
+  width:auto;
+  background-color: white;
+  border-radius: 12px;
+  height: 150px;
+}
+.picEquipeDefault{
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  height: 119px;
+}
+.cardInfoEquipe{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height:20px
+}
+.cardInfoEquipe p{
+  margin: 0px;
+  width: fit-content;
+}
+.containerEquipeInfo2{
+  display: none;
+}
+.buttonAjouterMembre2{
+  display:none
+}
+.FiltreEquipe{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 150px;
+  background-color: #236468;
+  position: relative;
+  position: 2;
+  z-index: 2;
+  bottom: 200px;
+  opacity: 0.75;
+  border-radius: 12px;
+}
+.containerIconEquipe{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 20px;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.containerImgFiltreEquipe{
+  display: flex;
+  flex-direction:row ;
+}
+.containerPhotoIconEquipe{
+  display: flex;
+  flex-direction: column;
+  width: 227px;
+  height: 235px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 12px;
+  border: solid 1px #dfe1e6;
+  background-color: #f8f9f9;
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
+.NomEquipe{
+  color: #37beb4;
+  margin-top: 10px !important;
+}
+.FonctionEquipe{
+  margin: 0px;
+  color: #236468;
+}
+.liseretEquipeCard{
+  width: 73%;
+  height: 2px;
+  background-color: #ebecf0;
+  margin-top: 5px
+}
+.pForfaitAndLogoMinusEquipe{
+  display: flex;
+  flex-direction: row;
+  justify-content:end;
+  color: #236468;
+  font-size: 17px;
+  align-items: center;
+  height: fit-content;
+}
+.PhotoEquipeModif{
+  width: 50%;
+  height: auto;
+  border-radius: 12px;
+}
+.PhotoEquipeModif2{
+  display:none
+
+}
+.pTEAndLogoMinusPaiement{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #236468;
+    font-size: 23px;
+    align-items: center;
+    height: 50px;
+}
+.pTEAndLogoMinusLangue{
+  padding-left: 10px;
+  padding-right: 10px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  font-size: 23px;
+  align-items: center;
+  font-size: 19px;
+}
+.pTEAndLogoMinusLangue p{ 
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.containerMinusLangue{
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebecf0;
+  border-radius: 100%;
+  font-size: 20px;
+}
+.minusLangue{
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  font-size: 20px !important;
+}
+.pTEAndLogoMinusLangueMenu{
+  background-color: #f8f9f9;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: solid 1px #dfe1e6;
+  border-radius: 10px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.containercheckBoxAndPLangue{
+  color: #236468;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: lighter;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+.containercheckBoxAndPLangue p {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.checkBoxFalseLangue{
+  background-color: white;
+  border-radius: 6px;
+  border: 2px solid #ebecf0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+}
+.containercheckBoxAndPLangue2{
+  display: none;
+}
+.checkBoxTrueLangue{
+  background-color: #37beb4;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ebecf0;
+}
+.pTEAndLogoMinusLangue2{
+  display: none;
+}
+.pTEAndLogoMinusMoteur{
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  align-items: center;
+  font-size: 19px;
+  padding-left: 20px;
+  font-weight: lighter;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+.pTEAndLogoMinusMoteur2{
+  display:none
+}
+.containerMinusMoteur{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebecf0;
+  border-radius: 100%;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.minusMoteur{
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  font-size: 20px !important;
+  font-weight: normal !important;
+}
+.Moteurp{
+  margin-top:0px;
+  margin-bottom:0px;
+  font-weight: normal;
+  color:#37beb4;
+}
+
+.containerOptionMoteur2{
+  display: none;
+}
+.containerOptionMoteur{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.OptionAccompHand2{
+  display: none;
+}
+.OptionAccompHand{
+  display: flex;
+  flex-direction: column;
+}
+.checkBoxTypeEtOptionFormation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #236468;
+  margin-left: 4px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+.checkBoxFormation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 37%;
+  color: #37beb4;
+}
+.checkBoxFormation p{
+  margin: 0px;
+}
+.checkBoxFalseFormation{
+  background-color: white;
+  border-radius: 6px;
+  border: 2px solid #ebecf0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+}
+.checkBoxTrueFormation{
+  background-color: #37beb4;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ebecf0;
+}
+#checkBoxFormationAccom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #37beb4;
+  width: 53%;
+  position: relative;
+  right: 20%;
+}
+#checkBoxFormationSuper{
+  width:43%
+}
+.checkBoxTypeEtOptionFormation2{
+  display: none;
+}
+#TypeFormationAutreMoto{
+  margin-right: 23%;
+  margin-left: 10%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.mapContainer{
+  height: 170px;
+  width: 111%;
+  position: relative;
+  right: 4%;
+  margin-top: 20px;
+}
+.buttonRevenirAuprofil{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 99%;
+  height: 30px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  background-color: #37beb4;
+  align-self: self-end;
+  margin-top: 13px;
+}
+.displayBlockChoice{
+  display:flex;
+  flex-direction: column;
+}
+.displayNoneblockChoice{
+  display:none
+}
+.buttonUploadImg{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  font-family: 'Poppins';
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 60px;
+  background-color: #37beb4;
+  position: relative;
+  top: 38px;
+ 
+}
+.containerCouvUploadNone{
+  display:None
+}
+.containerOngletBureauConduiteNone{
+  display:none
+}
+.liseretHorairesNone{
+  display:none
+}
+.containercheckBoxAndPNone{
+  display:none
+}
+.containerpSpeFicheMédecin{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f8f9f9;
+  border: solid 1px #dfe1e6;
+  border-radius: 10px;
+  padding-left: 18px;
+  padding-right: 12px;
+}
+.containerpSpeFicheMédecinNone{
+  display: none;
+}
+.SpeContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.pSpécialitéFicheModif{
+  width: 260px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 18px;
+  color: #37beb4;
+  margin-top: 10px;
+}
+.containerIconSpe{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 20px;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.pTarifsFicheModif{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 18px;
+  color: #37beb4;
+  margin-top: 10px;
+  width: 20%;
+}
+.pTarifsPrixFicheModif{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 18px;
+  color: #37beb4;
+  margin-top: 10px;
+  width: fit-content;
+  margin-left:43px ;
+}
+.containerIconTarifs{
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  height: 20px;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.containerConsultationPrixTarifsFiche{
+  display: flex;
+  flex-direction: row;
+  color: #8fa6a7;
+  font-size: 18px;
+}
+.containerConsultationPrixTarifsFiche p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 13%;
+}
+.contactIconValueContainer{
+  display: flex;
+  flex-direction: column;
+}
+.fermerFormFormationModifFicheNone{
+  display:none
+}
+.pSpécialitéFicheModifNone{
+  display:none
+}
