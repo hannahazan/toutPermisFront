@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom'
 
 const Fiche=()=>{
     const{choice,connectedUser,Adresse,assignAdresse,AdresseValue,assignAdresseValue,Longitude,assignLongitude,Lattitude,assignLattitude,IdFiche,assignIdFiche}=useContext(getConnectedUser)
-
+    let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
     console.log(connectedUser)
     const [uploadCouv, setUploadCouv] = useState(null)
     const [uploadLogo,setUploadLogo]=useState(null)
