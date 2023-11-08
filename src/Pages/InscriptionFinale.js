@@ -19,6 +19,7 @@ const InscriptionFinale=()=>{
     const[Ecole,setEcole]=useState(Boolean)
     const[Medecin,setMedecin]=useState(Boolean)
     const[amenageur,setAmenageur]=useState(Boolean)
+    let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
     const navigate=useNavigate()
     useEffect(()=>{
         setPath(window.location.pathname)
@@ -54,11 +55,11 @@ const InscriptionFinale=()=>{
 
         if (validEmail===true && validPassword===true && name.length >0 && prenom.length>0 ){
             axios
-            .post("http://localhost:5000/Users/test",{Name:name,Mail:connectedUser,Password:password,PhoneNumber:PhoneNumber,Ecole:Ecole
+            .post(`${ApifetchDeploy}/Users/test`,{Name:name,Mail:connectedUser,Password:password,PhoneNumber:PhoneNumber,Ecole:Ecole
             ,Prenom:prenom,Initiales:initiales,Medecin:Medecin,Aménageur:amenageur})
             .then((response)=>{(console.log(response.data))
                  axios
-                .put("http://localhost:5000/MessUtil/addNewUtilisateur/6528398bd2efed6f6387edc4",{ListeContacts:{Utilisateur:connectedUser,Pro:choice,Initiales:initiales,Prenom:prenom,Nom:name}})
+                .put(`${ApifetchDeploy}/MessUtil/addNewUtilisateur/6528398bd2efed6f6387edc4`,{ListeContacts:{Utilisateur:connectedUser,Pro:choice,Initiales:initiales,Prenom:prenom,Nom:name}})
                 .then((response)=>{(console.log(response.data))  
                     console.log("nop il passe pas du tout par là")
                 })
