@@ -543,7 +543,7 @@ useEffect(()=>{
   const ModifSecondTypeEtabissementRequest =()=>{
         console.log('what')
         axios
-        .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Bateau:checkBateau,Voiture:checkAuto,Moto:checkMoto})
+        .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Bateau:checkBateau,Voiture:checkAuto,Moto:checkMoto})
         .then((response) => {
             console.log(setModify(response.data));
             setModifTypesEtablissement(false)
@@ -554,7 +554,7 @@ useEffect(()=>{
   const ModifSecondPaiementRequest =()=>{
     console.log('what')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Cadeau:checkCadeau,Especes:checkEspeces,Bancaire:checkBancaire,Cheque:checkCheque})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Cadeau:checkCadeau,Especes:checkEspeces,Bancaire:checkBancaire,Cheque:checkCheque})
     .then((response) => {
         console.log(setModify(response.data));
         setModifySecondPaiment(false)
@@ -565,7 +565,7 @@ useEffect(()=>{
 const ModifSecondOptionsRequest =()=>{
     console.log('ha yes options')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{CoursCode:CheckOptionCours,Domicile:CheckOptionDomicile,Simulateur:CheckOptionSimulateur,DashCam:CheckOptionDashcam})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{CoursCode:CheckOptionCours,Domicile:CheckOptionDomicile,Simulateur:CheckOptionSimulateur,DashCam:CheckOptionDashcam})
     .then((response) => {
         console.log(setModify(response.data));
         setModifySecondOptions(false)
@@ -577,7 +577,7 @@ const ModifSecondOptionsRequest =()=>{
 const ModifSecondInclusive=()=>{
     console.log('dans le paiement')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Espagnol:checkEspagnol,Anglais:checkAnglais,Portugais:checkPortugais,Italien:checkItalien,Boule:checkBoule,
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Espagnol:checkEspagnol,Anglais:checkAnglais,Portugais:checkPortugais,Italien:checkItalien,Boule:checkBoule,
     Combine:checkCombiné,Cercle:checkCercle,Para:CheckPara,Tetra:CheckTetra,Hemi:CheckHemi,AmpuMI:CheckAmpuInf,AmpuMS:CheckAmpuSup
     ,Dys:checkDys,TDAH:checkTDAH, SurPartielle:checkLabiale,Surcomplete:checkSigne,Allemand:checkAllemand
 })
@@ -593,7 +593,7 @@ const ModifSecondInclusive=()=>{
     if(isFormDelete===false && isFormCarteDelete===false && OpenPopUpDeleteFromEquipe==false && OpenPopUpDeleteFromvéhicule==false && inDeleteSpe===false && inDeleteTarif===false)    
    { setCheckPopUpSupOpen(false)
     axios
-   .delete(`http://localhost:5000/FicheEcolePrincipale/delete/${valeur}`)
+   .delete(`${ApifetchDeploy}/FicheEcolePrincipale/delete/${valeur}`)
    .then((response)=>{(console.log(response.data))
        getAllOfOne()
    }) 
@@ -604,7 +604,7 @@ const ModifSecondInclusive=()=>{
         setCheckPopUpSupOpen(false)
         console.log('ici')
         axios
-        .put(`http://localhost:5000/FicheEcolePrincipale/removeSpe/${valeur}`,{Specialite:{"id":id}})
+        .put(`${ApifetchDeploy}/FicheEcolePrincipale/removeSpe/${valeur}`,{Specialite:{"id":id}})
         .then((response)=>{(console.log(response.data))
         console.log("je ne comprend pas")
             setInDeleteSpe(false)
@@ -621,7 +621,7 @@ const ModifSecondInclusive=()=>{
     setCheckPopUpSupOpen(false)
     console.log('ici')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/removeTarif/${valeur}`,{Tarifs:{"id":id}})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/removeTarif/${valeur}`,{Tarifs:{"id":id}})
     .then((response)=>{(console.log(response.data))
     console.log("je ne comprend pas")
         setInDeleteTarif(false)
@@ -638,7 +638,7 @@ const ModifSecondInclusive=()=>{
     setCheckPopUpSupOpen(false)
     console.log('ici')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/removeFormationCarte/${valeur}`,{FormationCarte:{"uniqueId":id}})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/removeFormationCarte/${valeur}`,{FormationCarte:{"uniqueId":id}})
     .then((response)=>{(console.log(response.data))
       console.log("je ne comprend pas")
         setisFormCarteDelete(false)
@@ -652,7 +652,7 @@ const ModifSecondInclusive=()=>{
     else if(OpenPopUpDeleteFromEquipe){
         setCheckPopUpSupOpen(false)
         axios
-        .delete(`http://localhost:5000/FicheEquipes/delete/${IdEquipe}`)
+        .delete(`${ApifetchDeploy}/FicheEquipes/delete/${IdEquipe}`)
         .then((response)=>{(console.log(response.data))
             console.log("je suis bien ici")
               setOpenPopUpDeleteFromEquipe(false)
@@ -662,7 +662,7 @@ const ModifSecondInclusive=()=>{
     else if(OpenPopUpDeleteFromvéhicule){
         setCheckPopUpSupOpen(false)
         axios
-        .delete(`http://localhost:5000/FicheVehicule/delete/${IdVéhicule}`)
+        .delete(`${ApifetchDeploy}/FicheVehicule/delete/${IdVéhicule}`)
         .then((response)=>{(console.log(response.data))
             console.log("je suis bien ici dans un véhicule")
               setOpenPopUpDeleteFromVéhicule(false)
@@ -673,7 +673,7 @@ const ModifSecondInclusive=()=>{
   { 
    setCheckPopUpSupOpen(false)
    axios
-   .put(`http://localhost:5000/FicheEcolePrincipale/removeFormation/${valeur}`,{Formation:{"uniqueId":id}})
+   .put(`${ApifetchDeploy}/FicheEcolePrincipale/removeFormation/${valeur}`,{Formation:{"uniqueId":id}})
    .then((response)=>{(console.log(response.data))
      console.log("je ne comprend pas POURQUOI TU PASSE Là")
        setIsFormDelete(false)
@@ -687,7 +687,7 @@ const ModifSecondInclusive=()=>{
   }
   const deleteOneFormation=()=>{
     axios
-   .put(`http://localhost:5000/FicheEcolePrincipale/removeFormation/${Fiche.EcoleNameId}`,{Formation:{"uniqueId":ModifFormSup}})
+   .put(`${ApifetchDeploy}/FicheEcolePrincipale/removeFormation/${Fiche.EcoleNameId}`,{Formation:{"uniqueId":ModifFormSup}})
    .then((response)=>{(console.log(response.data))
     getFiche()
    }) 
@@ -696,7 +696,7 @@ const ModifSecondInclusive=()=>{
    })  }
    const deleteOneFormationCarte=()=>{
     axios
-   .put(`http://localhost:5000/FicheEcolePrincipale/removeFormationCarte/${Fiche.EcoleNameId}`,{FormationCarte:{"uniqueId":ModifCarteSup}})
+   .put(`${ApifetchDeploy}/FicheEcolePrincipale/removeFormationCarte/${Fiche.EcoleNameId}`,{FormationCarte:{"uniqueId":ModifCarteSup}})
    .then((response)=>{(console.log(response.data))
     getFiche()
    }) 
@@ -707,7 +707,7 @@ const ModifSecondInclusive=()=>{
      utilisée lorsque les fiches ont déjà été créées et que l'utilisateur revient dessus************************ */
     const getAllOfOne=()=>{
         axios
-    .get(`http://localhost:5000/FicheEcolePrincipale/One/${connectedUser}`)
+    .get(`${ApifetchDeploy}/FicheEcolePrincipale/One/${connectedUser}`)
     .then((res) => {
       console.log(setAllOfOne(res.data))
       console.log(`Alors ${AllOfOne}`)
@@ -724,7 +724,7 @@ const ModifSecondInclusive=()=>{
     const getOneFiche=(LinkEcole)=>{
         
         axios
-    .get(`http://localhost:5000/FicheEcolePrincipale/creation/${LinkEcole}`)
+    .get(`${ApifetchDeploy}/FicheEcolePrincipale/creation/${LinkEcole}`)
     .then((res) => {
       console.log(setFiche(res.data))
       getUser()
@@ -852,7 +852,7 @@ const ModifSecondInclusive=()=>{
     .catch((err) => console.error(err));
         
         axios
-    .get(`http://localhost:5000/FicheCouverture/${LinkEcole}`)
+    .get(`${ApifetchDeploy}/FicheCouverture/${LinkEcole}`)
     .then((res) => {
       console.log(setCouvNew(res.data))
       console.log('ca fonctionne dans getOnefiche?')
@@ -861,7 +861,7 @@ const ModifSecondInclusive=()=>{
     .catch((err) => console.error(err));
 
         axios
-    .get(`http://localhost:5000/FicheLogo/${LinkEcole}`)
+    .get(`${ApifetchDeploy}/FicheLogo/${LinkEcole}`)
     .then((res) => {
       console.log(setLogoNew(res.data))
       console.log('ca fonctionne?')
@@ -870,7 +870,7 @@ const ModifSecondInclusive=()=>{
     })
     .catch((err) => console.error(err));
     axios
-        .get(`http://localhost:5000/FicheEquipes/${LinkEcole}`)
+        .get(`${ApifetchDeploy}/FicheEquipes/${LinkEcole}`)
         .then((res) => {
           setEquipesInfo(res.data) 
           console.log(EquipesInfo)
@@ -879,7 +879,7 @@ const ModifSecondInclusive=()=>{
         .catch((err) => console.error(err));
 
      axios
-        .get(`http://localhost:5000/FicheVehicule/${LinkEcole}`)
+        .get(`${ApifetchDeploy}/FicheVehicule/${LinkEcole}`)
         .then((res) => {
           setVéhiculeInfo(res.data) 
           ;
@@ -893,7 +893,7 @@ const ModifSecondInclusive=()=>{
 
     const getCouverturewithId=()=>{
         axios
-        .get(`http://localhost:5000/FicheCouverture/AvecId/${IdLogo}`)
+        .get(`${ApifetchDeploy}/FicheCouverture/AvecId/${IdLogo}`)
         .then((res) => {
           console.log(setCouvNew(res.data))
           console.log('ca fonctionne?')
@@ -905,7 +905,7 @@ const ModifSecondInclusive=()=>{
 
     const getLogowithId=()=>{
         axios
-    .get(`http://localhost:5000/FicheLogo/AvecId/${IdLogo}`)
+    .get(`${ApifetchDeploy}/FicheLogo/AvecId/${IdLogo}`)
     .then((res) => {
       console.log(setLogoNew(res.data))
       console.log('ca fonctionne pour le nouveau logo?')
@@ -919,7 +919,7 @@ const ModifSecondInclusive=()=>{
     })
     const getUser=()=>{
         axios
-        .get(`http://localhost:5000/Users/${connectedUser}`)
+        .get(`${ApifetchDeploy}/Users/${connectedUser}`)
         .then((res)=>{
             setUser(res.data)          
         })
@@ -927,7 +927,7 @@ const ModifSecondInclusive=()=>{
     }
     const getFicheFirst=()=>{
         axios
-        .get(`http://localhost:5000/FicheEcolePrincipale/creation/${EcoleNameId}`)
+        .get(`${ApifetchDeploy}/FicheEcolePrincipale/creation/${EcoleNameId}`)
         .then((res) => {
           setFiche(res.data)
           getUser()
@@ -941,7 +941,7 @@ const ModifSecondInclusive=()=>{
     }
     const getFiche=()=>{
         axios
-    .get(`http://localhost:5000/FicheEcolePrincipale/creation/${uniqueIdFicheEcoleName}`)
+    .get(`${ApifetchDeploy}/FicheEcolePrincipale/creation/${uniqueIdFicheEcoleName}`)
     .then((res) => {
       setFiche(res.data)
       console.log(Fiche)
@@ -962,7 +962,7 @@ const ModifSecondInclusive=()=>{
 
     const getEquipe=()=>{
         axios
-        .get(`http://localhost:5000/FicheEquipes/${Fiche.EcoleNameId}`)
+        .get(`${ApifetchDeploy}/FicheEquipes/${Fiche.EcoleNameId}`)
         .then((res) => {
           setEquipesInfo(res.data) 
           console.log(EquipesInfo)
@@ -973,7 +973,7 @@ const ModifSecondInclusive=()=>{
 
     const getVéhicule=()=>{
         axios
-        .get(`http://localhost:5000/FicheVehicule/${Fiche.EcoleNameId}`)
+        .get(`${ApifetchDeploy}/FicheVehicule/${Fiche.EcoleNameId}`)
         .then((res) => {
           setVéhiculeInfo(res.data) 
           console.log(EquipesInfo)
@@ -996,7 +996,7 @@ const ModifSecondInclusive=()=>{
     /*************modification part ****************************************************/
    const DescriptifModif=()=>{
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Descriptif:DescriptionEcole})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Descriptif:DescriptionEcole})
     .then((response)=>{setModify(response.data)
         console.log("tout est ok bien sûr que tout est ok...mais à qui tu parles? on compense la solitude comme on peut...pillule bleu...ça rime") 
         setIsdescriptif(true)
@@ -1009,7 +1009,7 @@ const ModifSecondInclusive=()=>{
    const HorairesConduiteModif=()=>
     {
      axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/addHorairesConduite/${Fiche.EcoleNameId}`,{HorairesConduite:{LundiMatinOuvreConduite,LundiMatinFermeConduite,LundiApremOuvreConduite,
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/addHorairesConduite/${Fiche.EcoleNameId}`,{HorairesConduite:{LundiMatinOuvreConduite,LundiMatinFermeConduite,LundiApremOuvreConduite,
 LundiApremFermeConduite,MardiMatinOuvreConduite,MardiMatinFermeConduite,MardiApremOuvreConduite,MardiMatinFermeConduite,
 MardiApremOuvreConduite,MardiApremFermeConduite,MercrediMatinOuvreConduite,MercrediMatinFermeConduite,MercrediApremOuvreConduite,
 MercrediApremFermeConduite,JeudiMatinOuvreConduite,JeudiMatinFermeConduite,JeudiApremOuvreConduite,JeudiApremFermeConduite,
@@ -1027,7 +1027,7 @@ DimancheApremOuvreConduite,DimancheApremFermeConduite}})
 const EcoleModif=()=>{
     console.log('what')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Bateau:checkBateau,Voiture:checkAuto,Moto:checkMoto})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Bateau:checkBateau,Voiture:checkAuto,Moto:checkMoto})
     .then((response) => {
         console.log(setModify(response.data));
         setValider(true)
@@ -1038,7 +1038,7 @@ const EcoleModif=()=>{
 const PaiementModif=()=>{
     console.log('dans le paiement')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Cadeau:checkCadeau,Especes:checkEspeces,Bancaire:checkBancaire,Cheque:checkCheque})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Cadeau:checkCadeau,Especes:checkEspeces,Bancaire:checkBancaire,Cheque:checkCheque})
     .then((response) => {
         console.log(setModify(response.data));
         setValiderPaiment(true)
@@ -1050,7 +1050,7 @@ const PaiementModif=()=>{
 const financementsModif=()=>{
     console.log('dans le paiement')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{PoleEmploi:CheckPoleEmp, CPF:CheckCPF,PermisJour:CheckPermis1,AidesApp:CheckAideApp, AidesLocales:CheckAideLocales})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{PoleEmploi:CheckPoleEmp, CPF:CheckCPF,PermisJour:CheckPermis1,AidesApp:CheckAideApp, AidesLocales:CheckAideLocales})
     .then((response) => {
         console.log(setModify(response.data));
         setValiderFinancements(true)
@@ -1062,7 +1062,7 @@ const financementsModif=()=>{
 const financementsSecondModif=()=>{
     console.log('dans le paiement')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{PoleEmploi:CheckPoleEmp, CPF:CheckCPF,PermisJour:CheckPermis1,AidesApp:CheckAideApp, AidesLocales:CheckAideLocales})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{PoleEmploi:CheckPoleEmp, CPF:CheckCPF,PermisJour:CheckPermis1,AidesApp:CheckAideApp, AidesLocales:CheckAideLocales})
     .then((response) => {
         console.log(setModify(response.data));
         setModifsecondFinancements(false)
@@ -1073,7 +1073,7 @@ const financementsSecondModif=()=>{
 
 const OptionsModif=()=>{console.log('dans le paiement')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{CoursCode:CheckOptionCours,Domicile:CheckOptionDomicile,Simulateur:CheckOptionSimulateur,DashCam:CheckOptionDashcam})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{CoursCode:CheckOptionCours,Domicile:CheckOptionDomicile,Simulateur:CheckOptionSimulateur,DashCam:CheckOptionDashcam})
     .then((response) => {
         console.log(setModify(response.data));
         setValiderOptions(true)
@@ -1086,7 +1086,7 @@ const OptionsModif=()=>{console.log('dans le paiement')
 const InclusiveModif=()=>{
     console.log('dans le paiement')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Espagnol:checkEspagnol,Anglais:checkAnglais,Portugais:checkPortugais,Italien:checkItalien,Boule:checkBoule,
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{Espagnol:checkEspagnol,Anglais:checkAnglais,Portugais:checkPortugais,Italien:checkItalien,Boule:checkBoule,
     Combine:checkCombiné,Cercle:checkCercle,Para:CheckPara,Tetra:CheckTetra,Hemi:CheckHemi,AmpuMI:CheckAmpuInf,AmpuMS:CheckAmpuSup
     ,Dys:checkDys,TDAH:checkTDAH, SurPartielle:checkLabiale,Surcomplete:checkSigne,Allemand:checkAllemand
 })
@@ -1102,7 +1102,7 @@ const InclusiveModif=()=>{
 
 const HorairesBureauModif=()=>{
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/addHorairesBureau/${Fiche.EcoleNameId}`,{HorairesBureau:{LundiMatinOuvre,LundiMatinFerme,LundiApremOuvre,LundiApremFerme,
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/addHorairesBureau/${Fiche.EcoleNameId}`,{HorairesBureau:{LundiMatinOuvre,LundiMatinFerme,LundiApremOuvre,LundiApremFerme,
 MardiMatinOuvre,MardiMatinFerme,MardiApremOuvre,MardiApremFerme,MercrediMatinOuvre,MercrediMatinFerme,MercrediApremOuvre,MercrediApremFerme,JeudiMatinOuvre,JeudiMatinFerme,
 JeudiApremOuvre,JeudiApremFerme,VendrediMatinOuvre,VendrediMatinFerme,VendrediApremOuvre,VendrediApremFerme,SamediMatinOuvre,SamediMatinFerme,
 SamediApremOuvre,SamediApremFerme,DimancheMatinOuvre,DimancheMatinFerme,DimancheApremOuvre,DimancheApremFerme}})
@@ -1129,7 +1129,7 @@ const formationsModif=()=>{
         optionAucune:checkFormationOptionAucune
      }
      axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/addFormation/${Fiche.EcoleNameId}`,{Formation:NouvelleForm})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/addFormation/${Fiche.EcoleNameId}`,{Formation:NouvelleForm})
     .then((response) => {
         console.log(setModify(response.data));
         setMinusAddFormations(false)
@@ -1154,7 +1154,7 @@ const ModifFormationSecond=()=>{
         optionAucune:checkFormationOptionAucune
      }
      axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/addFormation/${Fiche.EcoleNameId}`,{Formation:NouvelleForm})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/addFormation/${Fiche.EcoleNameId}`,{Formation:NouvelleForm})
     .then((response) => {
         console.log(setModify(response.data));
         setModifFormation(false)
@@ -1175,7 +1175,7 @@ const formationCarteModif=()=>{
         uniqueId:uniqueId
      }
      axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/addFormationCarte/${Fiche.EcoleNameId}`,{FormationCarte:NouvelleForm})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/addFormationCarte/${Fiche.EcoleNameId}`,{FormationCarte:NouvelleForm})
     .then((response) => {
         console.log(setModify(response.data));
         setMinusAddCarte(false)
@@ -1195,7 +1195,7 @@ const ModifFormationCarteSecond=()=>{
         uniqueId:uniqueId
      }
      axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/addFormationCarte/${Fiche.EcoleNameId}`,{FormationCarte:NouvelleForm})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/addFormationCarte/${Fiche.EcoleNameId}`,{FormationCarte:NouvelleForm})
     .then((response) => {
         console.log(setModify(response.data));
         setModifFormationCarte(false)
@@ -1207,7 +1207,7 @@ const ModifFormationCarteSecond=()=>{
 }
 const ContactModif=()=>{console.log('dans le contact')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{MailContact:MailContact,SiteWeb:SiteWeb,PhoneNumber:PhoneNumber})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{MailContact:MailContact,SiteWeb:SiteWeb,PhoneNumber:PhoneNumber})
     .then((response) => {
         console.log(setModify(response.data));
         console.log("dans les options et ça marche")
@@ -1234,7 +1234,7 @@ const ContactModif=()=>{console.log('dans le contact')
     async function createFiche() {
      
      axios
-     .post("http://localhost:5000/FicheEcolePrincipale/test",{EcoleNameId:EcoleNameId,EcoleName:EcoleName,UserPseudo:connectedUser,MailContact:MailContact,PhoneNumber:PhoneNumber
+     .post(`${ApifetchDeploy}/FicheEcolePrincipale/test`,{EcoleNameId:EcoleNameId,EcoleName:EcoleName,UserPseudo:connectedUser,MailContact:MailContact,PhoneNumber:PhoneNumber
         ,SiteWeb:SiteWeb 
     })
      .then((response)=>{(console.log(response.data))
@@ -1264,11 +1264,11 @@ async function onSubmit(e) {
     }
     if(couvNew._id && uploadCouv!=null) 
    {
-        axios.delete(`http://localhost:5000/FicheCouverture/delete/${couvNew._id}`)
+        axios.delete(`${ApifetchDeploy}/FicheCouverture/delete/${couvNew._id}`)
         .then((response)=>{console.log(response.data)})
         .catch((err)=>{console.log(err)})
         
-        axios.post("http://localhost:5000/FicheCouverture",data,config)
+        axios.post(`${ApifetchDeploy}/FicheCouverture`,data,config)
         .then((response)=>{(console.log(response.data))
             getCouverturewithId()
         }) 
@@ -1277,7 +1277,7 @@ async function onSubmit(e) {
         });
    }
    else{
-    axios.post("http://localhost:5000/FicheCouverture",data,config)
+    axios.post(`${ApifetchDeploy}/FicheCouverture`,data,config)
         .then((response)=>{(console.log(response.data))
             getCouverturewithId()
         }) 
@@ -1293,11 +1293,11 @@ async function onSubmit(e) {
     dataLogo.append("idLogo",IdLogo)
    if(LogoNew._id && uploadLogo!=null) 
     {
-        axios.delete(`http://localhost:5000/FicheLogo/delete/${LogoNew._id}`)
+        axios.delete(`${ApifetchDeploy}/FicheLogo/delete/${LogoNew._id}`)
         .then((response)=>{console.log(response.data)})
         .catch((err)=>{console.log(err)})
 
-        axios.post("http://localhost:5000/FicheLogo",dataLogo,config)
+        axios.post(`${ApifetchDeploy}/FicheLogo`,dataLogo,config)
         .then((response)=>{(console.log(response.data))
             getLogowithId()
         }) 
@@ -1306,7 +1306,7 @@ async function onSubmit(e) {
         });
     }
     else{
-        axios.post("http://localhost:5000/FicheLogo",dataLogo,config)
+        axios.post(`${ApifetchDeploy}/FicheLogo`,dataLogo,config)
         .then((response)=>{(console.log(response.data))
             getLogowithId()
         }) 
@@ -1335,7 +1335,7 @@ async function onSubmitEquipes(e) {
         }
     }
     
-    axios.post("http://localhost:5000/FicheEquipes",dataEquipes,config)
+    axios.post(`${ApifetchDeploy}/FicheEquipes`,dataEquipes,config)
     .then((response)=>{(console.log(response.data))
      getEquipe()
      setMinusAddMembre(false)
@@ -1363,7 +1363,7 @@ async function onSubmitVéhicule(e) {
         }
     }
     
-    axios.post("http://localhost:5000/FicheVehicule",dataVéhicule,config)
+    axios.post(`${ApifetchDeploy}/FicheVehicule`,dataVéhicule,config)
     .then((response)=>{(console.log(response.data))
      getVéhicule()
      setMinusAddVéhicule(false)
@@ -1392,14 +1392,14 @@ async function onSubmitModifyVéhicule(e) {
         }
     }
     
-    axios.post("http://localhost:5000/FicheVehicule",dataVéhicule,config)
+    axios.post(`${ApifetchDeploy}/FicheVehicule`,dataVéhicule,config)
     .then((response)=>{(console.log(response.data))
     }) 
     .catch(error => {
     console.log(error);
     });
     axios
-    .delete(`http://localhost:5000/FicheVehicule/delete/${IdVéhiculeModify}`)
+    .delete(`${ApifetchDeploy}/FicheVehicule/delete/${IdVéhiculeModify}`)
     .then((response)=>{(console.log(response.data))     
         getVéhicule()
         setModifyVéhicule(false)
@@ -1428,7 +1428,7 @@ async function onSubmitModifyEquipes(e) {
         }
     }
     
-    axios.post("http://localhost:5000/FicheEquipes",dataEquipes,config)
+    axios.post(`${ApifetchDeploy}/FicheEquipes`,dataEquipes,config)
     .then((response)=>{(console.log(response.data))
      setUploadEquipes(null)
     }) 
@@ -1437,7 +1437,7 @@ async function onSubmitModifyEquipes(e) {
     });
     
     axios
-    .delete(`http://localhost:5000/FicheEquipes/delete/${IdEquipeModify}`)
+    .delete(`${ApifetchDeploy}/FicheEquipes/delete/${IdEquipeModify}`)
     .then((response)=>{(console.log(response.data))
         
         getEquipe()
@@ -1492,7 +1492,7 @@ const ModifUploadVéhicule=(pictureName,url,id,name,fonction)=>{
 var url="https://nominatim.openstreetmap.org/search?format=json&limit=3&q="+Adresse
 const localModifFiche=(response)=>{
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${IdFiche}`,{Ville:Ville,Adresse:AdresseValue,CodePos:Departement,Longitude:response.data[0].lon,Lattitude:response.data[0].lat})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${IdFiche}`,{Ville:Ville,Adresse:AdresseValue,CodePos:Departement,Longitude:response.data[0].lon,Lattitude:response.data[0].lat})
     .then((res) => {
         console.log(setModify(res.data));
         console.log("dans la localisation ça le fait")
@@ -1544,7 +1544,7 @@ const OpenModifyGeneral=(setIndex,Index,setValue1,Value1,setValue2,Value2,setBoo
 }
 const AccessibiliteModif=()=>{console.log('dans accessibilité')
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{AccessibiliteTrue:CheckAccessibilitéYes,AccessibiliteFalse:CheckAccessibilitéNo})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{AccessibiliteTrue:CheckAccessibilitéYes,AccessibiliteFalse:CheckAccessibilitéNo})
     .then((response) => {
         console.log(setModify(response.data));
         setValiderAccessibilité(true)
@@ -1557,7 +1557,7 @@ const AccessibiliteModif=()=>{console.log('dans accessibilité')
 const ModifSecondAcce=()=>{
         console.log('dans le accessibilité')
         axios
-        .put(`http://localhost:5000/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{AccessibiliteTrue:CheckAccessibilitéYes,AccessibiliteFalse:CheckAccessibilitéNo
+        .put(`${ApifetchDeploy}/FicheEcolePrincipale/${Fiche.EcoleNameId}`,{AccessibiliteTrue:CheckAccessibilitéYes,AccessibiliteFalse:CheckAccessibilitéNo
     })
         .then((response) => {
             console.log(setModify(response.data));
@@ -1569,7 +1569,7 @@ const ModifSecondAcce=()=>{
 
 const speModif=()=>{
          axios
-        .put(`http://localhost:5000/FicheEcolePrincipale/addSpe/${Fiche.EcoleNameId}`,{Specialite:{value:spe,id:Math.random()+Date.now()}})
+        .put(`${ApifetchDeploy}/FicheEcolePrincipale/addSpe/${Fiche.EcoleNameId}`,{Specialite:{value:spe,id:Math.random()+Date.now()}})
         .then((response) => {
             console.log(setModify(response.data));
             setAddSpe(false)
@@ -1581,7 +1581,7 @@ const speModif=()=>{
 
 const speModifIndex=()=>{
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/UpdateSpe/${Fiche.EcoleNameId}`,{Specialite:{value:valueModifySpe,id:Math.random()+Date.now()},Index:indexSpe})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/UpdateSpe/${Fiche.EcoleNameId}`,{Specialite:{value:valueModifySpe,id:Math.random()+Date.now()},Index:indexSpe})
     .then((response) => {
         console.log(setModify(response.data));
         setAddSpe(false)
@@ -1596,7 +1596,7 @@ const speModifIndex=()=>{
 
 const TarifModif=()=>{
     axios
-   .put(`http://localhost:5000/FicheEcolePrincipale/addTarif/${Fiche.EcoleNameId}`,{Tarifs:{Consultation:Tarif,Prix:TarifPrix,id:Math.random()+Date.now()}})
+   .put(`${ApifetchDeploy}/FicheEcolePrincipale/addTarif/${Fiche.EcoleNameId}`,{Tarifs:{Consultation:Tarif,Prix:TarifPrix,id:Math.random()+Date.now()}})
    .then((response) => {
        console.log(setModify(response.data));
        setAddTarif(false)
@@ -1607,7 +1607,7 @@ const TarifModif=()=>{
 }
 const tarifModifIndex=()=>{
     axios
-    .put(`http://localhost:5000/FicheEcolePrincipale/UpdateTarif/${Fiche.EcoleNameId}`,{Tarifs:{Consultation:valueModifyTarif,Prix:valueModifyTarifPrix,id:Math.random()+Date.now()},Index:indexTarif})
+    .put(`${ApifetchDeploy}/FicheEcolePrincipale/UpdateTarif/${Fiche.EcoleNameId}`,{Tarifs:{Consultation:valueModifyTarif,Prix:valueModifyTarifPrix,id:Math.random()+Date.now()},Index:indexTarif})
     .then((response) => {
         console.log(setModify(response.data));
         setAddTarif(false)
