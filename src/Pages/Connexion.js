@@ -12,10 +12,11 @@ const Connexion=()=>{
 
     const [password,setpassword]=useState("")
     const navigate=useNavigate()
+    let ApiFetchLocal="http://localhost:5000"
 
     const onSubmit=()=>{
         axios
-        .post("http://localhost:5000/Users/connect/PostGet",{Mail:connectedUser,Password:password})
+        .post(`${ApiFetchLocal}/Users/connect/PostGet`,{Mail:connectedUser,Password:password})
         .then((response)=>{(console.log(response.data))
 
             if(response.data.Mail!=connectedUser || response.data.Password != password){
