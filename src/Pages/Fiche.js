@@ -55,6 +55,8 @@ const Fiche=()=>{
     const [User,setUser]=useState([])
     const [DescriptionEcole,setDescriptionEcole]=useState(null)
     const EcoleNameId=`${EcoleName+Math.random()+Date.now()}`
+    
+    console.log("ouais c'est bien visible sur l'app")
 
     /*******************Localisation*************************/
     const [Ville,setVille]=useState(String)
