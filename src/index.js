@@ -23,7 +23,8 @@ import ContactMessagerie from './Pages/ContactMessagerie';
 import socketIO from 'socket.io-client';
 import TestDeploy from './Pages/testDeploy.js';
 
-const socket = socketIO.connect('http://localhost:4000');
+//const socket = socketIO.connect('http://localhost:4000');
+const socket = socketIO.connect("https://toutpermisback-production.up.railway.app");
 
 
 const Path=window.location.pathname

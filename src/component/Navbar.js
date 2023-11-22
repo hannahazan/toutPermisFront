@@ -16,6 +16,7 @@ function Navbar(){
     const[User,setUser]=useState(null)
     const[LinkAdmin,setLinkAdmin]=useState(false)
     let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
+    /*"http://localhost:5000"*/
     const getUser = () => {
         return axios
           .get(`${ApifetchDeploy}/Users/${connectedUser}`)

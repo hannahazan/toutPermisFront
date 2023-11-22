@@ -11,9 +11,12 @@ import { useEffect,useState,ChangeEvent,useContext } from 'react'
 import {InscriptionContext as getConnectedUser} from '../utilitaires/InscriptionContext'
 import Navbar from '../component/Navbar';
 import axios from 'axios';
-const socket = SocketIo.connect('http://localhost:4000');
+//const socket = SocketIo.connect('http://localhost:4000');
+const socket = SocketIo.connect("https://toutpermisback-production.up.railway.app");
+
 
 const ContactMessagerie=({socket})=>{
+    let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
     const{connectedUser}=useContext(getConnectedUser)
 
     const [contacts,setContacts]=useState([])
@@ -55,7 +58,7 @@ const ContactMessagerie=({socket})=>{
     
     const getContact=()=>{
         axios
-        .get(`http://localhost:5000/MessUtil/6528398bd2efed6f6387edc4`)
+        .get(`${ApifetchDeploy}/MessUtil/6528398bd2efed6f6387edc4`)
         .then((res)=>{setContacts(res.data.ListeContacts)
             console.log(res.data.ListeContacts)})
         .catch((err) => console.error(err));
@@ -63,7 +66,7 @@ const ContactMessagerie=({socket})=>{
    
     const getConv=()=>{
         axios
-        .get(`http://localhost:5000/Users/${connectedUser}`)
+        .get(`${ApifetchDeploy}/Users/${connectedUser}`)
         .then((res)=>{setConv(res.data.Message)
         setNomEmetteur(res.data.Prenom)
         setNameEmetteur(res.data.Name)
@@ -88,7 +91,7 @@ const ContactMessagerie=({socket})=>{
             console.log(`${data.destinataire} c'est la response emit de la socket`)
             let destRef=data.destinataire
             axios
-        .get(`http://localhost:5000/Users/${connectedUser}`)
+        .get(`${ApifetchDeploy}/Users/${connectedUser}`)
         .then((res)=>{setConv(res.data.Message)
         console.log(`${destRef} destinataire de ref`)
         setNomEmetteur(res.data.Prenom)
@@ -202,7 +205,7 @@ const ContactMessagerie=({socket})=>{
                 
                /* le but de ce fetch est de  récupérer dans le tableau des contacts, seulement ceux qui ne viennent pas d'envoyer un message*/  
                 /*axios
-                .get(`http://localhost:5000/MessUtil/6528398bd2efed6f6387edc4`)
+                .get(`${ApifetchDeploy}/MessUtil/6528398bd2efed6f6387edc4`)
                 .then((res)=>{
                     for(let i=0;i<res.data.ListeContacts.length;i++){
                         setBoolContactMaj(false)
@@ -252,7 +255,7 @@ const ContactMessagerie=({socket})=>{
     const handleSendMessage = (e) => {
         let TimeStamp=Date.now()
         axios
-        .put(`http://localhost:5000/Users/${connectedUser}`,{Message:{Destinataire:Destinataire,Body:message,uniqueId:Date.now()+Math.random(),Room:room,TimeStamp:TimeStamp}})
+        .put(`${ApifetchDeploy}/Users/${connectedUser}`,{Message:{Destinataire:Destinataire,Body:message,uniqueId:Date.now()+Math.random(),Room:room,TimeStamp:TimeStamp}})
         .then((response)=>{(console.log(response.data))  
             console.log("il est bien dans le message user")
            getConv()
@@ -263,7 +266,7 @@ const ContactMessagerie=({socket})=>{
         })
 
         axios
-        .put(`http://localhost:5000/Users/${Destinataire}`,{Message:{Emetteur:connectedUser,Body:message,uniqueId:Date.now()+Math.random(),Room:room,TimeStamp:TimeStamp,Lu:false}})
+        .put(`${ApifetchDeploy}/Users/${Destinataire}`,{Message:{Emetteur:connectedUser,Body:message,uniqueId:Date.now()+Math.random(),Room:room,TimeStamp:TimeStamp,Lu:false}})
         .then((response)=>{(console.log(response.data))  
             console.log("il est bien dans le message user")
         })
@@ -326,7 +329,7 @@ const ContactMessagerie=({socket})=>{
         //si ça concorde on set la room avec la data room du tableau
         //sinon on en crée une nouvelle.
         axios
-        .get(`http://localhost:5000/Users/${connectedUser}`)
+        .get(`${ApifetchDeploy}/Users/${connectedUser}`)
         .then((res)=>{
             setUser(res.data)
             console.log(res.data.Message)

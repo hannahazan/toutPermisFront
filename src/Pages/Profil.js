@@ -17,7 +17,8 @@ import { Link } from 'react-router-dom';
 import { Navigate,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SocketIo from 'socket.io-client'
-const socket = SocketIo.connect('http://localhost:4000');
+//const socket = SocketIo.connect('http://localhost:4000');
+const socket = SocketIo.connect("https://toutpermisback-production.up.railway.app");
 
 
 const Profil=({socket})=>{
