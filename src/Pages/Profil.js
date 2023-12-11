@@ -82,7 +82,7 @@ const Profil=({socket})=>{
                 {User!=undefined?<p className='pBonjourProfil'>Bonjour {User.Prenom} !</p>:<p className='pBonjourProfil'>Bonjour Charliz !</p> }
                 <div className="pictoLogoEspacePro">
                     <img src={localLogo} className='localLogoPictoProfil'></img>
-                    {User!=undefined?<div className='ContainerInitiales'><p  className='Initiales'>{User.Initiales}</p></div>:<img src={photoProfil} className='profilPicture'></img>}
+                    {User!=undefined?<div className='ContainerInitiales'><p  className='Initiales'>{User.Initiales}</p></div>:<img  className='NonedisplayImage'></img>}
                 </div>
                 <div className='toolBox'>
                     <img src={enveloppe} className='enveloppeProfil'onClick={()=>{handleSubmitMessagerie()}}></img>

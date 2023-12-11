@@ -59,7 +59,7 @@ function Navbar(){
                     <Link to='/profil' className={Inscrit===true?'oui':'non'}>
                         <div className="pictoLogoEspaceProNav">
                         <img src={localLogo} className='localLogoPictoProfilNav'></img>
-                        {User!=undefined?<div className='containerInitialesNav'><p>{User.Initiales}</p></div>:<img src={photoProfil} className='profilPictureNav'></img>}
+                        {User!=undefined?<div className='containerInitialesNav'><p>{User.Initiales}</p></div>:<img  className="logoParaPicto2"></img>}
                         </div>    
                     </Link>  
             </navbar>
@@ -79,7 +79,7 @@ function Navbar(){
           <Link to="/profil" className={Inscrit===true?'oui':'non'}>
             <div className="pictoLogoEspaceProNav">
             <img src={localLogo} className='localLogoPictoProfilNav'></img>
-            {User!=undefined?<div className='containerInitialesNav'><p>{User.Initiales}</p></div>:<img src={photoProfil} className='profilPictureNav'></img>}
+            {User!=undefined?<div className='containerInitialesNav'><p>{User.Initiales}</p></div>:<img  className="logoParaPicto2"></img>}
             </div>    
           </Link>  
         </navbar>
