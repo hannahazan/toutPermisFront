@@ -95,21 +95,21 @@ const Profil=({socket})=>{
                     {choice==='voiture'?<img src={voiture} className='voitureProfilCard'></img>:choice==='médecin'?<img src={stethoscope} className='voitureProfilCard'></img>:<img src={clef} className='voitureProfilCard'></img>}
                     <p>Ma fiche</p>
                 </Link>
-                <div className='cardProfil'>
-                {choice==='voiture'?<img src={voiture} className='voitureProfilCard'></img>:choice==='médecin'?<img src={stethoscope} className='voitureProfilCard'></img>:<img src={clef} className='voitureProfilCard'></img>}
+                <div className='cardProfil' onClick={()=>{navigate("espacepro/inscriptionChoix/inscriptionFinale/Inprogress")}}>
+                {choice==='voiture'?<img src={voiture} className='voitureProfilCard'  ></img>:choice==='médecin'?<img src={stethoscope} className='voitureProfilCard' ></img>:<img src={clef} className='voitureProfilCard'  ></img>}
                     <p> Mes Offres</p>
                     <p>partenaires</p>
                 </div>
             </div>
             <div className='containerCardProfil'>
-                <div className='cardProfil'>
-                {choice==='voiture'?<img src={voiture} className='voitureProfilCard'></img>:choice==='médecin'?<img src={stethoscope} className='voitureProfilCard'></img>:<img src={clef} className='voitureProfilCard'></img>}
+                <div className='cardProfil' onClick={()=>{navigate("espacepro/inscriptionChoix/inscriptionFinale/Inprogress")}}>
+                {choice==='voiture'?<img src={voiture} className='voitureProfilCard'  ></img>:choice==='médecin'?<img src={stethoscope} className='voitureProfilCard'></img>:<img src={clef} className='voitureProfilCard'  ></img>}
                     <p>Mes factures</p>
                 </div>
-                <Link to='/MesAnnonces' className='cardProfil'>
-                {choice==='voiture'?<img src={voiture} className='voitureProfilCard'></img>:choice==='médecin'?<img src={stethoscope} className='voitureProfilCard'></img>:<img src={clef} className='voitureProfilCard'></img>}
+                <div className='cardProfil' onClick={()=>{navigate("espacepro/inscriptionChoix/inscriptionFinale/Inprogress")}}>
+                {choice==='voiture'?<img src={voiture} className='voitureProfilCard' ></img>:choice==='médecin'?<img src={stethoscope} className='voitureProfilCard'  ></img>:<img src={clef} className='voitureProfilCard'  ></img>}
                     <p>Mes annonces</p>
-                </Link>
+                </div>
             </div>
             </main>  
         </div>

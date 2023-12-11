@@ -19,6 +19,7 @@ import ombreAgée from '../images/Ombreagée-removebg-preview.png'
 import heros from '../images/CODEO_016_002-removebg-preview.png'
 import Navbar from '../component/Navbar';
 import { useState,useEffect } from 'react';
+import { Link, Navigate,useNavigate } from 'react-router-dom';
 
 
 
@@ -26,6 +27,7 @@ import { useState,useEffect } from 'react';
 function LandingPage() {
 
   const [Open,setOpen]=useState(false)
+  const navigate=useNavigate()
 
   return (
     <div className="App">
@@ -51,27 +53,27 @@ function LandingPage() {
                 <div className="icon">
                   <img src={carCard} className="carCard"></img>
                 </div>
-                <p className='pIconLien'>Ecole de conduite</p>
-                <img src={arrow} className='arrow'></img>
+                <p className='pIconLien' onClick={()=>{navigate("/INprogress")}}>Ecole de conduite</p>
+                <img src={arrow} className='arrow' onClick={()=>{navigate("/INprogress")}}></img>
             </div>
             <div className="containerIconLien">
                 <div className="icon2">
                   <img src={stetoCard} className="stetoCard"></img>
                 </div>
-                <p className='pIconLien'>Médecin agréé permis</p>
-                <img src={arrow} className='arrow2'></img>
+                <p className='pIconLien' onClick={()=>{navigate("/INprogress")}}>Médecin agréé permis</p>
+                <img src={arrow} className='arrow2' onClick={()=>{navigate("/INprogress")}}></img>
             </div>
             <div className="containerIconLien">
                 <div className="icon3">
                   <img src={listcheckCard} className="listcheckCard"></img>
                 </div>
-                <p className='pIconLien'>Tests psychotechniques</p>
-                <img src={arrow} className='arrow3'></img>
+                <p className='pIconLien' onClick={()=>{navigate("/INprogress")}}>Tests psychotechniques</p>
+                <img src={arrow} className='arrow3' onClick={()=>{navigate("/INprogress")}}></img>
             </div>
           </div>
           <div className="cardLocale">
              <div className='containerTousPro'>
-                <p className='pPro'>Voir tous les types de pros</p>
+                <p className='pPro' onClick={()=>{navigate("/INprogress")}}>Voir tous les types de pros</p>
                 <img src={arrow} className='arrowPlus'></img>
              </div>
              <div className="containerIconMap">

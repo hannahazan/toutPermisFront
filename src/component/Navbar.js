@@ -6,7 +6,7 @@ import volant from '../images/volantLogo.png'
 import '../css/Navbar.css'
 import cross from '../images/iconsAwesome/xmark-solid (1).svg'
 import photoProfil from'../images/1HloWLLhL3iTrmDtMigiitLB9Qx.jpg'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function Navbar(){
@@ -17,6 +17,7 @@ function Navbar(){
     const[LinkAdmin,setLinkAdmin]=useState(false)
     let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
     /*"http://localhost:5000"*/
+    const navigate=useNavigate()
     const getUser = () => {
         return axios
           .get(`${ApifetchDeploy}/Users/${connectedUser}`)
@@ -40,10 +41,10 @@ function Navbar(){
             <div className='menuEscamotable2'>
                 <img src={cross} className='cross' onClick={()=>{setOpen(false)}}></img>
                 <ul>
-                <li className='liMenu'>Je m'informe</li>
-                <li className='liMenu'>Je trouve mon parcours</li>
-                <Link to='espacepro'><li className='liMenu'>Espace pro</li></Link>
-                <li className='liMenu'>Contactez-nous</li>
+                <li className='liMenu' onClick={()=>{navigate("/Inprogress")}}>Je m'informe</li>
+                <li className='liMenu' onClick={()=>{navigate("/Inprogress")}} >Je trouve mon parcours</li>
+                {connectedUser==false?<Link to='espacepro'><li className='liMenu'>Espace pro</li></Link>:<Link to='/profil'><li className='liMenu'>Mon profil</li></Link>}
+                <li className='liMenu'onClick={()=>{navigate("/Inprogress")}}>Contactez-nous</li>
                 <Link to='/' ><li className='liMenu'>Accueil</li></Link>
                 <li className={User!=null&&User.Admin===true?'liMenu':'liMenuNone'} id='LinkAdminLi' onClick={()=>{LinkAdmin==false?setLinkAdmin(true):setLinkAdmin(false)}}> Fonctions Administrateur</li>
                 <div className={LinkAdmin===true?'containerLinkAdmin':'noneContainerLinkAdmin'}>

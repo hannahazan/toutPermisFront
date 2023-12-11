@@ -22,6 +22,7 @@ import Messagerie from './Pages/Messagerie';
 import ContactMessagerie from './Pages/ContactMessagerie';
 import socketIO from 'socket.io-client';
 import TestDeploy from './Pages/testDeploy.js';
+import InProgress from './Pages/Inprogress';
 
 //const socket = socketIO.connect('http://localhost:4000');
 const socket = socketIO.connect("https://toutpermisback-production.up.railway.app");
@@ -36,6 +37,8 @@ root.render(
       <Routes>
           <Route path="/"  element={<LandingPage/>}/>
           <Route path="/tunnelEcole" excat element={<TunnelEcole/>}/>
+          <Route path="profil/espacepro/inscriptionChoix/inscriptionFinale/Inprogress"  element={<InProgress/>}/>
+          <Route path="/Inprogress" element={<InProgress/>}/>
           <Route path="/Localisation" excat element={<Localisation/>}/>
           <Route path="/tunnelEcoleFormation" exact element={<TunnelEcoleFormation/>}></Route>
           <Route path="/tunnelEcoleVehicules" exact element={<TunnelEcoleVehicules/>}></Route>
