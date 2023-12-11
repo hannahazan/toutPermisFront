@@ -40,7 +40,7 @@ function LandingPage() {
               <p className='ligne9'>permis</p>
               <p className='ligne10'>adapté à</p>
             </div>
-            <p className="ligne11">à tes besoins </p>
+            <p className="ligne11">tes besoins </p>
         </div>
         <div className="secondPara2">
           <p className='ligne12'>Besoin d'un aménagement particulier ?</p> 
