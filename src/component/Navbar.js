@@ -43,7 +43,7 @@ function Navbar(){
                 <ul>
                 <li className='liMenu' onClick={()=>{navigate("/Inprogress")}}>Je m'informe</li>
                 <li className='liMenu' onClick={()=>{navigate("/Inprogress")}} >Je trouve mon parcours</li>
-                {connectedUser==false?<Link to='espacepro'><li className='liMenu'>Espace pro</li></Link>:<Link to='/profil'><li className='liMenu'>Mon profil</li></Link>}
+                {Inscrit==false?<Link to='espacepro'><li className='liMenu'>Espace pro</li></Link>:<Link to='/profil'><li className='liMenu'>Mon profil</li></Link>}
                 <li className='liMenu'onClick={()=>{navigate("/Inprogress")}}>Contactez-nous</li>
                 <Link to='/' ><li className='liMenu'>Accueil</li></Link>
                 <li className={User!=null&&User.Admin===true?'liMenu':'liMenuNone'} id='LinkAdminLi' onClick={()=>{LinkAdmin==false?setLinkAdmin(true):setLinkAdmin(false)}}> Fonctions Administrateur</li>
