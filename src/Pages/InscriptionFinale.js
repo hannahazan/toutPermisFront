@@ -124,6 +124,7 @@ const InscriptionFinale=()=>{
                     <input type="email" id="mail" name="user_mail" placeholder='Adresse e-mail' className='inNameFinale'onChange={(e)=>{assignConnecteduser(e)}}></input>
                     <input type="number" id="name" name="user_name" placeholder='Téléphone' className='inNameFinale'onChange={(e)=>{setPhoneNumber(e.target.value)}}></input>
                     <input type="password" id="name" name="user_name" placeholder='Mot de passe' className='inNameFinale'onChange={(e)=>{setPassword(e.target.value)}}></input>
+                    <p className='MotDePasseExigences'>Votre mot de passe doit comporter au minimum 8 caractères et être composé d'un caractère spécial, un chiffre, une majuscule, une minuscule.</p>
                     <button  className='buttonFormFinale' onClick={onSubmit}>M'inscrire</button>
                 </div> 
                  }
