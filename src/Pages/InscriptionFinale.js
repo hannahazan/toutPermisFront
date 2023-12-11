@@ -113,7 +113,8 @@ const InscriptionFinale=()=>{
                     <input type="text" id="name" name="user_name" placeholder="Nom de l'école de conduite" className='inNameFinale'></input>
                     <input type="email" id="mail" name="user_mail" placeholder='Adress e-mail' className='inNameFinale'onChange={(e)=>{assignConnecteduser(e)}}></input>
                     <input type="number" id="name" name="user_name" placeholder='Téléphone' className='inNameFinale'onChange={(e)=>{setPhoneNumber(e.target.value)}}></input>
-                    <input type="password" id="name" name="user_name" placeholder='Mot de passe' className='inNameFinale'onChange={(e)=>{setPassword(e.target.value)}} onClick={()=>{alert("Votre mot de passe doit être composé de 8 lettres minimum et comporter au moins: une minuscule, une majuscule, un caractère special et un chiffre")}}></input> 
+                    <input type="password" id="name" name="user_name" placeholder='Mot de passe' className='inNameFinale'onChange={(e)=>{setPassword(e.target.value)}} ></input> 
+                    <p className='MotDePasseExigences'>Votre mot de passe doit comporter au minimum 8 caractères et être composé d'un caractère spécial, un chiffre, une majuscule, une minuscule.</p>
                     <button  className='buttonFormFinale' onClick={onSubmit}>M'inscrire</button>
                 </div>
                 :
