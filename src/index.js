@@ -24,6 +24,7 @@ import socketIO from 'socket.io-client';
 import TestDeploy from './Pages/testDeploy.js';
 import InProgress from './Pages/Inprogress';
 
+
 //const socket = socketIO.connect('http://localhost:4000');
 const socket = socketIO.connect("https://toutpermisback-production.up.railway.app");
 
@@ -34,8 +35,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <InscriptionProvider>
-      <Routes>
+      <Routes socket={socket} >
           <Route path="/"  element={<LandingPage/>}/>
+          <Route path="/Nav"  element={<Navbar socket={socket}/>}/>
           <Route path="/tunnelEcole" excat element={<TunnelEcole/>}/>
           <Route path="profil/espacepro/inscriptionChoix/inscriptionFinale/Inprogress"  element={<InProgress/>}/>
           <Route path="/Inprogress" element={<InProgress/>}/>

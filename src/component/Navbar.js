@@ -39,8 +39,8 @@ function Navbar({socket}){
     const disconnectMess=()=>{
       if(AFKMess==false){
         AssignAFKMess(true)
-        socket.on("disconnect", () => {
-          console.log(socket.id);
+        socket.emit("disconnect",()=>{
+          console.log("peut-être en prod")
         });
       }
       else{
