@@ -8,9 +8,12 @@ import cross from '../images/iconsAwesome/xmark-solid (1).svg'
 import photoProfil from'../images/1HloWLLhL3iTrmDtMigiitLB9Qx.jpg'
 import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import SocketIo from 'socket.io-client'
 
-function Navbar(){
-    const {Inscrit,boolInscription,connectedUser}=useContext(InscriptionBoolean)
+const socket = SocketIo.connect("https://toutpermisback-production.up.railway.app");
+
+function Navbar({socket}){
+    const {Inscrit,boolInscription,connectedUser,AFKMess,AssignAFKMess}=useContext(InscriptionBoolean)
     const[Open,setOpen]=useState(false)
     const[Path,setPath]=useState('')
     const[User,setUser]=useState(null)
@@ -33,6 +36,17 @@ function Navbar(){
         setPath(window.location.pathname)
         getUser()
       },[])
+    const disconnectMess=()=>{
+      if(AFKMess==false){
+        AssignAFKMess(true)
+        socket.on("disconnect", () => {
+          console.log(socket.id);
+        });
+      }
+      else{
+        console.log("il n'est pas rentré dans la messagerie")
+      }
+    }
     return(
     <div>
         {Open===false?
@@ -57,7 +71,7 @@ function Navbar(){
             <navbar className="navbar">
                     <img src={Burger} className="burger" onClick={Open==false?()=>{setOpen(true)}:()=>{setOpen(false)}}></img>
                     <Link to='/profil' className={Inscrit===true?'oui':'non'}>
-                        <div className="pictoLogoEspaceProNav">
+                        <div className="pictoLogoEspaceProNav" onClick={()=>{disconnectMess()}}>
                         <img src={localLogo} className='localLogoPictoProfilNav'></img>
                         {User!=undefined?<div className='containerInitialesNav'><p>{User.Initiales}</p></div>:<img  className="logoParaPicto2"></img>}
                         </div>    
@@ -77,7 +91,7 @@ function Navbar(){
               </div>
           </Link>
           <Link to="/profil" className={Inscrit===true?'oui':'non'}>
-            <div className="pictoLogoEspaceProNav">
+            <div className="pictoLogoEspaceProNav" onClick={()=>{disconnectMess()}}>
             <img src={localLogo} className='localLogoPictoProfilNav'></img>
             {User!=undefined?<div className='containerInitialesNav'><p>{User.Initiales}</p></div>:<img  className="logoParaPicto2"></img>}
             </div>    

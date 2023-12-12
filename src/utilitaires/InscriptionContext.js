@@ -15,6 +15,7 @@ const InscriptionProvider=({children})=>{
     const [AdresseValue,setAdressevalue]=useState(null)
     const [Longitude,setLongitude]=useState(null)
     const [Lattitude,setLattitude]=useState(null)
+    const [AFKMess,setAFKMess]=useState(Boolean)
     function assignChoice(value){
         setChoice(value)
     }
@@ -58,11 +59,14 @@ const InscriptionProvider=({children})=>{
     function assignIdFiche(value){
         setIdFiche(value)
     }
+    function AssignAFKMess(value){
+        setAFKMess(value)
+    }
    
     return(
         <InscriptionContext.Provider value={{choice,Inscrit,assignChoice,boolInscription,connectedUser,assignConnecteduser,disconnetingUser,checkDelete,assignDeleteTrue,
         assignDeleteFalse,EcoleNameContexte,assignEcoleName,OpenSupprimer,assignOpenSupprimerFalse,assignOpenSupprimerTrue,Adresse,assignAdresse
-        ,AdresseValue,assignAdresseValue,Lattitude,assignLattitude,Longitude,assignLongitude,IdFiche,assignIdFiche}}>
+        ,AdresseValue,assignAdresseValue,Lattitude,assignLattitude,Longitude,assignLongitude,IdFiche,assignIdFiche,AFKMess,AssignAFKMess}}>
             {children}
         </InscriptionContext.Provider>
     )
