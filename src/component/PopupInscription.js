@@ -60,8 +60,7 @@ const PopupInscription=(socket)=>{
                         <img src={ombreAgée} className='ombreAgéePopup'></img>
                         </div>
                     </div>
-                </div>
-               
+                </div>   
             </div>
             :
             <div className="containerPopup2">

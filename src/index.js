@@ -23,10 +23,12 @@ import ContactMessagerie from './Pages/ContactMessagerie';
 import socketIO from 'socket.io-client';
 import TestDeploy from './Pages/testDeploy.js';
 import InProgress from './Pages/Inprogress';
+import { socket as IO } from './utilitaires/connexionSocketIO.js'
 
 
 //const socket = socketIO.connect('http://localhost:4000');
-const socket = socketIO.connect("https://toutpermisback-production.up.railway.app");
+//const socket = socketIO.connect("https://toutpermisback-production.up.railway.app");
+const socket=IO
 
 
 const Path=window.location.pathname
@@ -56,7 +58,6 @@ root.render(
           <Route path='/connexion' element={<Connexion/>}></Route>
           <Route path='/EditBlog' element={<EditBlog/>}></Route>
           <Route path='/testDeploy' element={<TestDeploy/>}></Route>
-          <Route path='/Messagerie' element={<Messagerie socket={socket}/>}></Route>
           <Route path='/ContactMessagerie' element={<ContactMessagerie socket={socket}/>}></Route>
       </Routes>
     </InscriptionProvider>

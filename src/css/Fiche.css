@@ -597,6 +597,56 @@
   margin:0px;
   
 }
+#checkBoiteManuelle{
+  margin-top: 10px !important
+}
+#checkBoiteManuelle div{
+ width:60px !important
+}
+#checkRemorqueCarvane{
+  margin-top:10px !important ;
+}
+#checkRemorqueCarvane div{
+  width:49px !important
+}
+#checkFormationAutomatique{
+  width: 45% !important
+}
+#checkFormationAutomatique div{
+  width: 38px !important;
+}
+#checkFormationManuelle div{
+  width:38px !important
+}
+#checkFormationAménagée{
+  width: 45%;
+  margin-top: 10px;
+}
+#checkFormationAménagée div{
+  width: 38px !important;
+}
+#check125{
+  margin-top: 10px !important;
+}
+#check125 div{
+  width: 31px !important;
+}
+#checkPasserelleA2{
+  margin-top: 10px !important;
+}
+#checkPasserelleA2 div{
+  width: 35px !important;
+}
+#checkplaisance{
+  width: 55% !important;
+  margin-top: 10px !important;
+}
+#checkplaisance div{
+  width: 35px !important;
+}
+#checkhauturier div{
+  width: 38px !important;
+}
 /***************Etablissements**************/
 .containerEtablissements{
   display: flex;

@@ -16,14 +16,15 @@ import clef from '../images/iconsAwesome/screwdriver-wrench-solid.svg'
 import { Link } from 'react-router-dom';
 import { Navigate,useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import SocketIo from 'socket.io-client'
+import {io}from 'socket.io-client'
+import { socket as IO } from '../utilitaires/connexionSocketIO';
 //const socket = SocketIo.connect('http://localhost:4000');
-const socket = SocketIo.connect("https://toutpermisback-production.up.railway.app");
-
+//const socket = io.connect("https://toutpermisback-production.up.railway.app");
+const socket= IO
 
 const Profil=({socket})=>{
     
-    const{choice,assignChoice,connectedUser,validEmail,disconnetingUser,boolInscription,AFKMess,AssignAFKMess}=useContext(InscriptionChoice)
+    const{choice,assignChoice,connectedUser,validEmail,disconnetingUser,boolInscription}=useContext(InscriptionChoice)
     const[User,setUser]=useState()
     const [disconnected,setDisconnected]=useState(false)
     const navigate=useNavigate()
@@ -53,12 +54,11 @@ const Profil=({socket})=>{
       }
 
       const handleSubmitMessagerie = () => {
-        AssignAFKMess(false)
         //sends the username and socket ID to the Node.js serve
         socket.emit('newUser', {userName: connectedUser, userID: socket.id});
         navigate('/ContactMessagerie');
       };
-      
+     
       useEffect(()=>{
         getUser()
         console.log(`${validEmail} le trick pour l'email`)

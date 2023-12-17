@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom'
 
 const Fiche=()=>{
     const{choice,connectedUser,Adresse,assignAdresse,AdresseValue,assignAdresseValue,Longitude,assignLongitude,Lattitude,assignLattitude,IdFiche,assignIdFiche}=useContext(getConnectedUser)
-    let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
+    let ApifetchDeploy="https://toutpermisback-production.up.railway.app"/*'http://localhost:5000'*/
     console.log(connectedUser)
     const [uploadCouv, setUploadCouv] = useState(null)
     const [uploadLogo,setUploadLogo]=useState(null)
@@ -39,6 +39,7 @@ const Fiche=()=>{
     const [MinusAddFormations,setMinusAddFormations]=useState(false)
     const [OngletHoraires,setOngletHoraires]=useState('bureau')
     const [OngletFormations,setOngletFormations]=useState('Auto')
+    /**************************************formations************************************************/
     const [FormationName,setFormationName]=useState()
     const [FormationDescriptif,setFormationDescriptif]=useState()
     const [FormationPrix,setFormationPrix]=useState()
@@ -47,6 +48,29 @@ const Fiche=()=>{
     const [checkFormationOptionAcc,setcheckFormationOptionAcc]=useState(false)
     const [checkFormationOptionSuper,setcheckFormationOptionSuper]=useState(false)
     const [checkFormationOptionAucune,setcheckFormationOptionAucune]=useState(false)
+    const [checkFormationContenuPermisB,setcheckFormationContenuPermisB]=useState(false)
+    const [checkFormationContenuPermisAM,setcheckFormationContenuPermisAM]=useState(false)
+    const [checkFormationContenuCode,setcheckFormationContenuCode]=useState(false)
+    const [checkFormationContenuPasserelle,setcheckFormationContenuPasserelle]=useState(false)
+    const [checkFormationContenuRemorque,setcheckFormationContenuRemorque]=useState(false)
+    const [checkFormationTypeVéhiculeManuelle,setcheckFormationTypeVéhiculeManuelle]=useState(false)
+    const [checkFormationTypeVéhiculeAutomatique,setcheckFormationTypeVéhiculeAutomatique]=useState(false)
+    const [checkFormationTypeVéhiculeAménagée,setcheckFormationTypeVéhiculeAménagée]=useState(false)
+    const [checkFormationTypeVéhiculeVoiturette,setcheckFormationTypeVéhiculeVoiturette]=useState(false)
+    const [checkFormationContenuPermisAmMoto,setcheckFormationContenuPermisAmMoto]=useState(false)
+    const [checkFormationContenuPermisA1,setcheckFormationContenuPermisA1]=useState(false)
+    const [checkFormationContenuPermisA2,setcheckFormationContenuPermisA2]=useState(false)
+    const [checkFormationContenuPermis125,setcheckFormationContenuPermis125]=useState(false)
+    const [checkFormationContenuPasserelleA2,setcheckFormationContenuPasserelleA2]=useState(false)
+    const [checkFormationContenuPermisCotier,setcheckFormationContenuPermisCotier]=useState(false)
+    const [checkFormationContenuPermisFluvial,setcheckFormationContenuPermisFluvial]=useState(false)
+    const [checkFormationContenuCRR,setcheckFormationContenuCRR]=useState(false)
+    const [checkFormationContenuPermisHautier,setcheckFormationContenuPermisHautier]=useState(false)
+    const [checkFormationContenuGrandePlaisance,setcheckFormationContenuGrandePlaisance]=useState(false)
+
+
+
+    
     const [AddEcole,setAddEcole]=useState(false)
     const [EcoleName,setEcoleName]=useState('')
     const [Create,setCreate]=useState(false)
@@ -331,22 +355,47 @@ const Fiche=()=>{
     const [ModificationFormationPrix,setModificationFormationPrix]=useState(null)
     const [ModifFormSup,setModifFormSup]=useState(null)
     /****************modification formation logique fonction*************************** */
-    const OpenModifFormation=(Name,Descriptif,Prix,sup,typeClass,typeAcc,optionAccom,optionSuper,optionAucune)=>{
-        setModifFormation(true)
-        setModificationFormationNom(Name)
-        setModificationFormationDescriptif(Descriptif)
-        setModificationFormationPrix(Prix)
-        setModifFormSup(sup)
-        setIsCategorieFormation(false)
-        if(OngletFormations==="Auto"||OngletFormations==="Bateau"||OngletFormations==="Moto")
-       { 
-        setCheckFormationTypeAccellérée(typeAcc)
-        setCheckFormationTypeClassique(typeClass)}
-        if(OngletFormations==="Auto")
-        {setcheckFormationOptionAcc(optionAccom)
-        setcheckFormationOptionSuper(optionSuper)
-        setcheckFormationOptionAucune(optionAucune)}
+    const OpenModifFormation=(Name,Descriptif,Prix,sup,typeClass,typeAcc,optionAccom,optionSuper,optionAucune,
+        contenuB,contenuAM,contenuCode,contenuPasserelle,contenuRemorque,typeManuelle,typeAutomatique,typeAménagée,typeVoiturette)=>{
+            setModifFormation(true)
+            setModificationFormationNom(Name)
+            setModificationFormationDescriptif(Descriptif)
+            setModificationFormationPrix(Prix)
+            setModifFormSup(sup)
+            setIsCategorieFormation(false)
+        if(OngletFormations==="Auto"||OngletFormations==="Bateau"||OngletFormations==="Moto"){ 
+            setCheckFormationTypeAccellérée(typeAcc)
+            setCheckFormationTypeClassique(typeClass)}
+        if(OngletFormations==="Auto"){
+            setcheckFormationOptionAcc(optionAccom)
+            setcheckFormationOptionSuper(optionSuper)
+            setcheckFormationOptionAucune(optionAucune)
+            setcheckFormationContenuPermisB(contenuB)
+            setcheckFormationContenuPermisAM(contenuAM)
+            setcheckFormationContenuCode(contenuCode)
+            setcheckFormationContenuPasserelle(contenuPasserelle)
+            setcheckFormationContenuRemorque(contenuRemorque)
+            setcheckFormationTypeVéhiculeManuelle(typeManuelle)
+            setcheckFormationTypeVéhiculeAutomatique(typeAutomatique)
+            setcheckFormationTypeVéhiculeAménagée(typeAménagée)
+            setcheckFormationTypeVéhiculeVoiturette(typeVoiturette)
+        }
+        if(OngletFormations==="Moto"){
+            setcheckFormationContenuPermisA1(contenuB)
+            setcheckFormationContenuPermisAmMoto(contenuAM)
+            setcheckFormationContenuPermisA2(contenuCode)
+            setcheckFormationContenuPasserelleA2(contenuPasserelle)
+            setcheckFormationContenuPermis125(contenuRemorque) 
+        }
+        if(OngletFormations==="Bateau"){
+            setcheckFormationContenuPermisCotier(contenuB)
+            setcheckFormationContenuPermisFluvial(contenuAM)
+            setcheckFormationContenuCRR(contenuCode)
+            setcheckFormationContenuPermisHautier(contenuPasserelle)
+            setcheckFormationContenuGrandePlaisance(contenuRemorque)
+        }
     }
+    /*****************coche une case et décoche les autres************************************************/
     const oneOrTheOther=(setHook,setHook2)=>{
         setHook(true)
         setHook2(false)
@@ -355,6 +404,19 @@ const Fiche=()=>{
         setHook(true)
         setHook2(false)
         setHook3(false)
+    }
+    const oneOrTheOtherthree=(setHook,setHook2,setHook3,setHook4)=>{
+        setHook(true)
+        setHook2(false)
+        setHook3(false)
+        setHook4(false)
+    }
+    const oneOrTheOtherFour=(setHook,setHook2,setHook3,setHook4,setHook5)=>{
+        setHook(true)
+        setHook2(false)
+        setHook3(false)
+        setHook4(false)
+        setHook5(false)
     }
     /*************change Horaires logique*************** */
     const ChangeHoraires=(e,setHookHoraires,hookHorairesValider,setHookHorairesvalider)=>{
@@ -1118,7 +1180,9 @@ SamediApremOuvre,SamediApremFerme,DimancheMatinOuvre,DimancheMatinFerme,Dimanche
 
 const formationsModif=()=>{
     const uniqueId= Date.now()+Math.random()
-    let NouvelleForm={
+    let NouvelleForm={}
+    if(OngletFormations==="Auto")
+     {NouvelleForm={
         Nom:FormationName,
         Descriptif:FormationDescriptif,
         prix:FormationPrix,
@@ -1128,7 +1192,68 @@ const formationsModif=()=>{
         typeAcc:checkFormationTypeAccellérée,
         optionSuper:checkFormationOptionSuper,
         optionAccom:checkFormationOptionAcc,
-        optionAucune:checkFormationOptionAucune
+        optionAucune:checkFormationOptionAucune,
+        permisB:checkFormationContenuPermisB,
+        permisAM:checkFormationContenuPermisAM,  
+        passerelle:checkFormationContenuPasserelle,
+        remorque:checkFormationContenuRemorque,
+        code:checkFormationContenuCode,
+        manuelle:checkFormationTypeVéhiculeManuelle,
+        automatique:checkFormationTypeVéhiculeAutomatique,
+        voiturette:checkFormationTypeVéhiculeVoiturette,
+        aménagée:checkFormationTypeVéhiculeAménagée
+     }}
+     if(OngletFormations==="Moto"){
+        NouvelleForm={
+            Nom:FormationName,
+            Descriptif:FormationDescriptif,
+            prix:FormationPrix,
+            categorie:OngletFormations,
+            uniqueId:uniqueId,
+            typeClass:checkFormationTypeClassique,
+            typeAcc:checkFormationTypeAccellérée,
+            optionSuper:checkFormationOptionSuper,
+            optionAccom:checkFormationOptionAcc,
+            optionAucune:checkFormationOptionAucune,
+            permisAmMoto:checkFormationContenuPermisAmMoto,
+            permisA1:checkFormationContenuPermisA1,
+            permisA2:checkFormationContenuPermisA2,
+            permis125:checkFormationContenuPermis125,
+            passerelleA2:checkFormationContenuPasserelleA2,
+         }
+     }
+     if(OngletFormations==="Bateau"){
+        NouvelleForm={
+            Nom:FormationName,
+            Descriptif:FormationDescriptif,
+            prix:FormationPrix,
+            categorie:OngletFormations,
+            uniqueId:uniqueId,
+            typeClass:checkFormationTypeClassique,
+            typeAcc:checkFormationTypeAccellérée,
+            optionSuper:checkFormationOptionSuper,
+            optionAccom:checkFormationOptionAcc,
+            optionAucune:checkFormationOptionAucune,
+            permisCôtier:checkFormationContenuPermisCotier,
+            permisFluvial:checkFormationContenuPermisFluvial,
+            CRR:checkFormationContenuCRR,
+            permisHauturier:checkFormationContenuPermisHautier,
+            GrandPlaisance:checkFormationContenuGrandePlaisance
+         }
+     }
+     if(OngletFormations==="Stages"){
+        NouvelleForm={
+            Nom:FormationName,
+            Descriptif:FormationDescriptif,
+            prix:FormationPrix,
+            categorie:OngletFormations,
+            uniqueId:uniqueId,
+            typeClass:checkFormationTypeClassique,
+            typeAcc:checkFormationTypeAccellérée,
+            optionSuper:checkFormationOptionSuper,
+            optionAccom:checkFormationOptionAcc,
+            optionAucune:checkFormationOptionAucune,
+         }
      }
      axios
     .put(`${ApifetchDeploy}/FicheEcolePrincipale/addFormation/${Fiche.EcoleNameId}`,{Formation:NouvelleForm})
@@ -1143,17 +1268,80 @@ const formationsModif=()=>{
 }
 const ModifFormationSecond=()=>{
     const uniqueId= Date.now()+Math.random()
-    let NouvelleForm={
-        Nom:ModificationFormationNom,
-        Descriptif:ModificationFormationDescriptif,
-        prix:ModificationFormationPrix,
-        categorie:OngletFormations,
-        uniqueId:uniqueId,
-        typeClass:checkFormationTypeClassique,
-        typeAcc:checkFormationTypeAccellérée,
-        optionSuper:checkFormationOptionSuper,
-        optionAccom:checkFormationOptionAcc,
-        optionAucune:checkFormationOptionAucune
+    let NouvelleForm={}
+    if(OngletFormations==="Auto"){
+        NouvelleForm={
+            Nom:ModificationFormationNom,
+            Descriptif:ModificationFormationDescriptif,
+            prix:ModificationFormationPrix,
+            categorie:OngletFormations,
+            uniqueId:uniqueId,
+            typeClass:checkFormationTypeClassique,
+            typeAcc:checkFormationTypeAccellérée,
+            optionSuper:checkFormationOptionSuper,
+            optionAccom:checkFormationOptionAcc,
+            optionAucune:checkFormationOptionAucune,
+            permisB:checkFormationContenuPermisB,
+            permisAM:checkFormationContenuPermisAM,
+            code:checkFormationContenuCode,
+            passerelle:checkFormationContenuPasserelle,
+            remorque:checkFormationContenuRemorque,
+            manuelle:checkFormationTypeVéhiculeManuelle,
+            automatique:checkFormationTypeVéhiculeAutomatique,
+            aménagée:checkFormationTypeVéhiculeAménagée,
+            voiturette:checkFormationTypeVéhiculeVoiturette
+     }}
+     if(OngletFormations==="Moto"){
+        NouvelleForm={
+            Nom:ModificationFormationNom,
+            Descriptif:ModificationFormationDescriptif,
+            prix:ModificationFormationPrix,
+            categorie:OngletFormations,
+            uniqueId:uniqueId,
+            typeClass:checkFormationTypeClassique,
+            typeAcc:checkFormationTypeAccellérée,
+            optionSuper:checkFormationOptionSuper,
+            optionAccom:checkFormationOptionAcc,
+            optionAucune:checkFormationOptionAucune,
+            permisA1:checkFormationContenuPermisA1,
+            permisA2:checkFormationContenuPermisA2,
+            permis125:checkFormationContenuPermis125,
+            permisAmMoto:checkFormationContenuPermisAmMoto,
+            passerelleA2:checkFormationContenuPasserelleA2
+
+     }}
+     if(OngletFormations==="Bateau"){
+        NouvelleForm={
+            Nom:ModificationFormationNom,
+            Descriptif:ModificationFormationDescriptif,
+            prix:ModificationFormationPrix,
+            categorie:OngletFormations,
+            uniqueId:uniqueId,
+            typeClass:checkFormationTypeClassique,
+            typeAcc:checkFormationTypeAccellérée,
+            optionSuper:checkFormationOptionSuper,
+            optionAccom:checkFormationOptionAcc,
+            optionAucune:checkFormationOptionAucune,
+            permisCôtier:checkFormationContenuPermisCotier,
+            permisFluvial:checkFormationContenuPermisFluvial,
+            CRR:checkFormationContenuCRR,
+            permisHauturier:checkFormationContenuPermisHautier,
+            GrandPlaisance:checkFormationContenuGrandePlaisance
+     }
+     }
+     if(OngletFormations==="Stages") {
+        NouvelleForm={
+            Nom:ModificationFormationNom,
+            Descriptif:ModificationFormationDescriptif,
+            prix:ModificationFormationPrix,
+            categorie:OngletFormations,
+            uniqueId:uniqueId,
+            typeClass:checkFormationTypeClassique,
+            typeAcc:checkFormationTypeAccellérée,
+            optionSuper:checkFormationOptionSuper,
+            optionAccom:checkFormationOptionAcc,
+            optionAucune:checkFormationOptionAucune,
+        }
      }
      axios
     .put(`${ApifetchDeploy}/FicheEcolePrincipale/addFormation/${Fiche.EcoleNameId}`,{Formation:NouvelleForm})
@@ -2679,7 +2867,8 @@ console.log(`${ModifContactValue} ici c'est le modifContactvalue`)
                                 <div className='containerIconFormationPrixFiche'>
                                     <p className='pPrixForfaitsFiche'>{event.prix}</p>
                                     <div className='containerIconForfaitFiche'>
-                                        <img src={modif} className='iconForfaitFiche'onClick={()=>{OpenModifFormation(event.Nom,event.Descriptif,event.prix,event.uniqueId,event.typeClass,event.typeAcc,event.optionAccom,event.optionSuper,event.optionAucune)}}></img>
+                                        <img src={modif} className='iconForfaitFiche'onClick={()=>{OpenModifFormation(event.Nom,event.Descriptif,event.prix,event.uniqueId,event.typeClass,event.typeAcc,event.optionAccom,event.optionSuper,event.optionAucune,event.permisB,event.permisAM
+                                            ,event.code,event.passerelle,event.remorque,event.manuelle,event.automatique,event.aménagée,event.voiturette)}}></img>
                                         <img src={trash} className='iconForfaitFiche' onClick={()=>{OpenPopUpForm(Fiche.EcoleNameId,event.uniqueId,event.Nom)}}></img>
                                     </div>
                                 </div>
@@ -2692,7 +2881,7 @@ console.log(`${ModifContactValue} ici c'est le modifContactvalue`)
                                 <div className='containerIconFormationPrixFiche'>
                                     <p className='pPrixForfaitsFiche'>{event.prix}</p>
                                     <div className='containerIconForfaitFiche'>
-                                        <img src={modif} className='iconForfaitFiche'onClick={()=>{OpenModifFormation(event.Nom,event.Descriptif,event.prix,event.uniqueId,event.typeClass,event.typeAcc,"NI","NI","NI")}}></img>
+                                        <img src={modif} className='iconForfaitFiche'onClick={()=>{OpenModifFormation(event.Nom,event.Descriptif,event.prix,event.uniqueId,event.typeClass,event.typeAcc,"NI","NI","NI",event.permisA1,event.permisAmMoto,event.permisA2,event.passerelleA2,event.permis125,"NI","NI","NI","NI")}}></img>
                                         <img src={trash} className='iconForfaitFiche' onClick={()=>{OpenPopUpForm(Fiche.EcoleNameId,event.uniqueId,event.Nom)}}></img>
                                     </div>
                                 </div>
@@ -2705,7 +2894,7 @@ console.log(`${ModifContactValue} ici c'est le modifContactvalue`)
                                 <div className='containerIconFormationPrixFiche'>
                                     <p className='pPrixForfaitsFiche'>{event.prix}</p>
                                     <div className='containerIconForfaitFiche'>
-                                        <img src={modif} className='iconForfaitFiche'onClick={()=>{OpenModifFormation(event.Nom,event.Descriptif,event.prix,event.uniqueId,event.typeClass,event.typeAcc,"NI","NI","NI")}}></img>
+                                        <img src={modif} className='iconForfaitFiche'onClick={()=>{OpenModifFormation(event.Nom,event.Descriptif,event.prix,event.uniqueId,event.typeClass,event.typeAcc,"NI","NI","NI",  event.permisCôtier,event.permisFluvial,event.CRR,event.permisHauturier,event.GrandPlaisance,"NI","NI","NI","NI")}}></img>
                                         <img src={trash} className='iconForfaitFiche' onClick={()=>{OpenPopUpForm(Fiche.EcoleNameId,event.uniqueId,event.Nom)}}></img>
                                     </div>
                                 </div>
@@ -2717,7 +2906,8 @@ console.log(`${ModifContactValue} ici c'est le modifContactvalue`)
                                 <div className='containerIconFormationPrixFiche'>
                                     <p className='pPrixForfaitsFiche'>{event.prix}</p>
                                     <div className='containerIconForfaitFiche'>
-                                        <img src={modif} className='iconForfaitFiche'onClick={()=>{OpenModifFormation(event.Nom,event.Descriptif,event.prix,event.uniqueId,"NI","NI","NI","NI","NI")}}></img>
+                                        <img src={modif} className='iconForfaitFiche'onClick={()=>{OpenModifFormation(event.Nom,event.Descriptif,event.prix,event.uniqueId,"NI","NI","NI","NI","NI",
+                                        "NI","NI","NI","NI","NI","NI","NI","NI","NI")}}></img>
                                         <img src={trash} className='iconForfaitFiche' onClick={()=>{OpenPopUpForm(Fiche.EcoleNameId,event.uniqueId,event.Nom)}}></img>
                                     </div>
                                 </div>
@@ -2768,6 +2958,132 @@ console.log(`${ModifContactValue} ici c'est le modifContactvalue`)
                                     </div> 
                                 </div>
                             </div>
+                            <div className={OngletFormations=='Auto'?'checkBoxTypeEtOptionFormation':'checkBoxTypeEtOptionFormation2'}>
+                                <p>Contenu :</p> 
+                                <div className='checkBoxFormation' id='checkBoxFormationAccom'>
+                                    <p>Permis B</p>
+                                    <div className={checkFormationContenuPermisB===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisB==false?oneOrTheOtherthree(setcheckFormationContenuPermisB,setcheckFormationContenuPasserelle,setcheckFormationContenuPermisAM,setcheckFormationContenuRemorque):setcheckFormationContenuPermisB(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisB===true?'checkTrue':'checkFalse'}></img>
+                                    </div>
+                                </div>
+                                <div className='checkBoxFormation'id='checkBoxFormationSuper'>
+                                    <p>Permis AM</p>
+                                    <div className={checkFormationContenuPermisAM===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisAM==false?oneOrTheOtherthree(setcheckFormationContenuPermisAM,setcheckFormationContenuPermisB,setcheckFormationContenuPasserelle,setcheckFormationContenuRemorque):setcheckFormationContenuPermisAM(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisAM===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation'>
+                                    <p>Code</p>
+                                    <div className={checkFormationContenuCode===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuCode==false?setcheckFormationContenuCode(true):setcheckFormationContenuCode(false)}}>
+                                        <img src={check} className={checkFormationContenuCode===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkBoiteManuelle'>
+                                    <p>Passerelle boite manuelle</p>
+                                    <div className={checkFormationContenuPasserelle===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPasserelle==false?oneOrTheOtherthree(setcheckFormationContenuPasserelle,setcheckFormationContenuPermisAM,setcheckFormationContenuPermisB,setcheckFormationContenuRemorque):setcheckFormationContenuPasserelle(false)}}>
+                                        <img src={check} className={checkFormationContenuPasserelle===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkRemorqueCarvane'>
+                                    <p>Remorque et caravane</p>
+                                    <div className={checkFormationContenuRemorque===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuRemorque==false?oneOrTheOtherthree(setcheckFormationContenuRemorque,setcheckFormationContenuPasserelle,setcheckFormationContenuPermisAM,setcheckFormationContenuPermisB):setcheckFormationContenuRemorque(false)}}>
+                                        <img src={check} className={checkFormationContenuRemorque===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div className={OngletFormations=='Auto'?'checkBoxTypeEtOptionFormation':'checkBoxTypeEtOptionFormation2'}>
+                                <p>Type de véhicule :</p> 
+                                <div className='checkBoxFormation'>
+                                    <p>Voiturette</p>
+                                    <div className={checkFormationTypeVéhiculeVoiturette===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationTypeVéhiculeVoiturette==false?setcheckFormationTypeVéhiculeVoiturette(true):setcheckFormationTypeVéhiculeVoiturette(false)}}>
+                                        <img src={check} className={checkFormationTypeVéhiculeVoiturette===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id="checkFormationManuelle">
+                                    <p>Voiture manuelle</p>
+                                    <div className={checkFormationTypeVéhiculeManuelle===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationTypeVéhiculeManuelle==false?setcheckFormationTypeVéhiculeManuelle(true):setcheckFormationTypeVéhiculeManuelle(false)}}>
+                                        <img src={check} className={checkFormationTypeVéhiculeManuelle===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkFormationAutomatique'>
+                                    <p>Voiture automatique</p>
+                                    <div className={checkFormationTypeVéhiculeAutomatique===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationTypeVéhiculeAutomatique==false?setcheckFormationTypeVéhiculeAutomatique(true):setcheckFormationTypeVéhiculeAutomatique(false)}}>
+                                        <img src={check} className={checkFormationTypeVéhiculeAutomatique===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkFormationAménagée'>
+                                    <p>Voiture amménagée</p>
+                                    <div className={checkFormationTypeVéhiculeAménagée===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationTypeVéhiculeAménagée==false?setcheckFormationTypeVéhiculeAménagée(true):setcheckFormationTypeVéhiculeAménagée(false)}}>
+                                        <img src={check} className={checkFormationTypeVéhiculeAménagée===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>  
+                            </div>
+                            <div className={OngletFormations=='Moto'?'checkBoxTypeEtOptionFormation':'checkBoxTypeEtOptionFormation2'}>
+                                <p>Contenu :</p> 
+                                <div className='checkBoxFormation' id='checkBoxFormationAccom'>
+                                    <p>Permis AM</p>
+                                    <div className={checkFormationContenuPermisAmMoto===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisAmMoto==false?oneOrTheOtherFour(setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA1,setcheckFormationContenuPermisA2,setcheckFormationContenuPermis125,setcheckFormationContenuPasserelleA2):setcheckFormationContenuPermisAmMoto(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisAmMoto===true?'checkTrue':'checkFalse'}></img>
+                                    </div>
+                                </div>
+                                <div className='checkBoxFormation'id='checkBoxFormationSuper'>
+                                    <p>Permis A1</p>
+                                    <div className={checkFormationContenuPermisA1===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisA1==false?oneOrTheOtherFour(setcheckFormationContenuPermisA1,setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA2,setcheckFormationContenuPermis125,setcheckFormationContenuPasserelleA2):setcheckFormationContenuPermisA1(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisA1===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation'>
+                                    <p>Permis A2</p>
+                                    <div className={checkFormationContenuPermisA2===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisA2==false?oneOrTheOtherFour(setcheckFormationContenuPermisA2,setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA1,setcheckFormationContenuPermis125,setcheckFormationContenuPasserelleA2):setcheckFormationContenuPermisA2(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisA2===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='check125'>
+                                    <p>Formation 125</p>
+                                    <div className={checkFormationContenuPermis125===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermis125==false?oneOrTheOtherFour(setcheckFormationContenuPermis125,setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA1,setcheckFormationContenuPermisA2,setcheckFormationContenuPasserelleA2):setcheckFormationContenuPermis125(false)}}>
+                                        <img src={check} className={checkFormationContenuPermis125===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkPasserelleA2'>
+                                    <p>Passerelle A2-A</p>
+                                    <div className={checkFormationContenuPasserelleA2===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPasserelleA2==false?oneOrTheOtherFour(setcheckFormationContenuPasserelleA2,setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA1,setcheckFormationContenuPermis125,setcheckFormationContenuPermisA2):setcheckFormationContenuPasserelleA2(false)}}>
+                                        <img src={check} className={checkFormationContenuPasserelleA2===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div className={OngletFormations=='Bateau'?'checkBoxTypeEtOptionFormation':'checkBoxTypeEtOptionFormation2'}>
+                                <p>Contenu :</p> 
+                                <div className='checkBoxFormation' id='checkBoxFormationAccom'>
+                                    <p>Permis côtier</p>
+                                    <div className={checkFormationContenuPermisCotier===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisCotier==false?oneOrTheOtherFour(setcheckFormationContenuPermisCotier,setcheckFormationContenuCRR,setcheckFormationContenuPermisFluvial,setcheckFormationContenuGrandePlaisance,setcheckFormationContenuPermisHautier):setcheckFormationContenuPermisCotier(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisCotier===true?'checkTrue':'checkFalse'}></img>
+                                    </div>
+                                </div>
+                                <div className='checkBoxFormation'id='checkBoxFormationSuper'>
+                                    <p>Permis fluvial</p>
+                                    <div className={checkFormationContenuPermisFluvial===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisFluvial==false?oneOrTheOtherFour(setcheckFormationContenuPermisFluvial,setcheckFormationContenuCRR,setcheckFormationContenuPermisCotier,setcheckFormationContenuGrandePlaisance,setcheckFormationContenuPermisHautier):setcheckFormationContenuPermisFluvial(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisFluvial===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation'>
+                                    <p>CRR</p>
+                                    <div className={checkFormationContenuCRR===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuCRR==false?oneOrTheOtherFour(setcheckFormationContenuCRR,setcheckFormationContenuPermisCotier,setcheckFormationContenuPermisFluvial,setcheckFormationContenuGrandePlaisance,setcheckFormationContenuPermisHautier):setcheckFormationContenuCRR(false)}}>
+                                        <img src={check} className={checkFormationContenuCRR===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkhauturier'>
+                                    <p>Permis hauturier</p>
+                                    <div className={checkFormationContenuPermisHautier===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisHautier==false?oneOrTheOtherFour(setcheckFormationContenuPermisHautier,setcheckFormationContenuCRR,setcheckFormationContenuPermisFluvial,setcheckFormationContenuGrandePlaisance,setcheckFormationContenuPermisCotier):setcheckFormationContenuPermisHautier(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisHautier===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkplaisance'>
+                                    <p>Permis grande plaisance</p>
+                                    <div className={checkFormationContenuGrandePlaisance===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuGrandePlaisance==false?oneOrTheOtherFour(setcheckFormationContenuGrandePlaisance,setcheckFormationContenuCRR,setcheckFormationContenuPermisFluvial,setcheckFormationContenuPermisCotier,setcheckFormationContenuPermisHautier):setcheckFormationContenuGrandePlaisance(false)}}>
+                                        <img src={check} className={checkFormationContenuGrandePlaisance===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                            </div>
                             <input   type='submit' className='buttonValidBoxcase' value={'Valider'} onClick={()=>{formationsModif()}}></input>
                         </div>
                         <div className={ModifFormation===false?'containerNomDescription':'containerFormFormation'}>
@@ -2811,6 +3127,132 @@ console.log(`${ModifContactValue} ici c'est le modifContactvalue`)
                                     <p>Aucune</p>
                                     <div className={checkFormationOptionAucune===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationOptionAucune==false?oneOrTheOtherTwo(setcheckFormationOptionAucune,setcheckFormationOptionSuper,setcheckFormationOptionAcc):setcheckFormationOptionAucune(false)}}>
                                         <img src={check} className={checkFormationOptionAucune===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div className={OngletFormations=='Auto'?'checkBoxTypeEtOptionFormation':'checkBoxTypeEtOptionFormation2'}>
+                                <p>Contenu :</p> 
+                                <div className='checkBoxFormation' id='checkBoxFormationAccom'>
+                                    <p>Permis B</p>
+                                    <div className={checkFormationContenuPermisB===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisB==false?oneOrTheOtherthree(setcheckFormationContenuPermisB,setcheckFormationContenuPasserelle,setcheckFormationContenuPermisAM,setcheckFormationContenuRemorque):setcheckFormationContenuPermisB(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisB===true?'checkTrue':'checkFalse'}></img>
+                                    </div>
+                                </div>
+                                <div className='checkBoxFormation'id='checkBoxFormationSuper'>
+                                    <p>Permis AM</p>
+                                    <div className={checkFormationContenuPermisAM===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisAM==false?oneOrTheOtherthree(setcheckFormationContenuPermisAM,setcheckFormationContenuPermisB,setcheckFormationContenuPasserelle,setcheckFormationContenuRemorque):setcheckFormationContenuPermisAM(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisAM===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation'>
+                                    <p>Code</p>
+                                    <div className={checkFormationContenuCode===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuCode==false?setcheckFormationContenuCode(true):setcheckFormationContenuCode(false)}}>
+                                        <img src={check} className={checkFormationContenuCode===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkBoiteManuelle'>
+                                    <p>Passerelle boite manuelle</p>
+                                    <div className={checkFormationContenuPasserelle===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPasserelle==false?oneOrTheOtherthree(setcheckFormationContenuPasserelle,setcheckFormationContenuPermisAM,setcheckFormationContenuPermisB,setcheckFormationContenuRemorque):setcheckFormationContenuPasserelle(false)}}>
+                                        <img src={check} className={checkFormationContenuPasserelle===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkRemorqueCarvane'>
+                                    <p>Remorque et caravane</p>
+                                    <div className={checkFormationContenuRemorque===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuRemorque==false?oneOrTheOtherthree(setcheckFormationContenuRemorque,setcheckFormationContenuPasserelle,setcheckFormationContenuPermisAM,setcheckFormationContenuPermisB):setcheckFormationContenuRemorque(false)}}>
+                                        <img src={check} className={checkFormationContenuRemorque===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div className={OngletFormations=='Auto'?'checkBoxTypeEtOptionFormation':'checkBoxTypeEtOptionFormation2'}>
+                                <p>Type de véhicule :</p> 
+                                <div className='checkBoxFormation'>
+                                    <p>Voiturette</p>
+                                    <div className={checkFormationTypeVéhiculeVoiturette===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationTypeVéhiculeVoiturette==false?setcheckFormationTypeVéhiculeVoiturette(true):setcheckFormationTypeVéhiculeVoiturette(false)}}>
+                                        <img src={check} className={checkFormationTypeVéhiculeVoiturette===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id="checkFormationManuelle">
+                                    <p>Voiture manuelle</p>
+                                    <div className={checkFormationTypeVéhiculeManuelle===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationTypeVéhiculeManuelle==false?setcheckFormationTypeVéhiculeManuelle(true):setcheckFormationTypeVéhiculeManuelle(false)}}>
+                                        <img src={check} className={checkFormationTypeVéhiculeManuelle===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkFormationAutomatique'>
+                                    <p>Voiture automatique</p>
+                                    <div className={checkFormationTypeVéhiculeAutomatique===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationTypeVéhiculeAutomatique==false?setcheckFormationTypeVéhiculeAutomatique(true):setcheckFormationTypeVéhiculeAutomatique(false)}}>
+                                        <img src={check} className={checkFormationTypeVéhiculeAutomatique===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkFormationAménagée'>
+                                    <p>Voiture amménagée</p>
+                                    <div className={checkFormationTypeVéhiculeAménagée===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationTypeVéhiculeAménagée==false?setcheckFormationTypeVéhiculeAménagée(true):setcheckFormationTypeVéhiculeAménagée(false)}}>
+                                        <img src={check} className={checkFormationTypeVéhiculeAménagée===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>  
+                            </div>
+                            <div className={OngletFormations=='Moto'?'checkBoxTypeEtOptionFormation':'checkBoxTypeEtOptionFormation2'}>
+                                <p>Contenu :</p> 
+                                <div className='checkBoxFormation' id='checkBoxFormationAccom'>
+                                    <p>Permis AM</p>
+                                    <div className={checkFormationContenuPermisAmMoto===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisAmMoto==false?oneOrTheOtherFour(setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA1,setcheckFormationContenuPermisA2,setcheckFormationContenuPermis125,setcheckFormationContenuPasserelleA2):setcheckFormationContenuPermisAmMoto(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisAmMoto===true?'checkTrue':'checkFalse'}></img>
+                                    </div>
+                                </div>
+                                <div className='checkBoxFormation'id='checkBoxFormationSuper'>
+                                    <p>Permis A1</p>
+                                    <div className={checkFormationContenuPermisA1===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisA1==false?oneOrTheOtherFour(setcheckFormationContenuPermisA1,setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA2,setcheckFormationContenuPermis125,setcheckFormationContenuPasserelleA2):setcheckFormationContenuPermisA1(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisA1===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation'>
+                                    <p>Permis A2</p>
+                                    <div className={checkFormationContenuPermisA2===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisA2==false?oneOrTheOtherFour(setcheckFormationContenuPermisA2,setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA1,setcheckFormationContenuPermis125,setcheckFormationContenuPasserelleA2):setcheckFormationContenuPermisA2(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisA2===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='check125'>
+                                    <p>Formation 125</p>
+                                    <div className={checkFormationContenuPermis125===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermis125==false?oneOrTheOtherFour(setcheckFormationContenuPermis125,setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA1,setcheckFormationContenuPermisA2,setcheckFormationContenuPasserelleA2):setcheckFormationContenuPermis125(false)}}>
+                                        <img src={check} className={checkFormationContenuPermis125===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkPasserelleA2'>
+                                    <p>Passerelle A2-A</p>
+                                    <div className={checkFormationContenuPasserelleA2===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPasserelleA2==false?oneOrTheOtherFour(setcheckFormationContenuPasserelleA2,setcheckFormationContenuPermisAmMoto,setcheckFormationContenuPermisA1,setcheckFormationContenuPermis125,setcheckFormationContenuPermisA2):setcheckFormationContenuPasserelleA2(false)}}>
+                                        <img src={check} className={checkFormationContenuPasserelleA2===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div className={OngletFormations=='Bateau'?'checkBoxTypeEtOptionFormation':'checkBoxTypeEtOptionFormation2'}>
+                                <p>Contenu :</p> 
+                                <div className='checkBoxFormation' id='checkBoxFormationAccom'>
+                                    <p>Permis côtier</p>
+                                    <div className={checkFormationContenuPermisCotier===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisCotier==false?oneOrTheOtherFour(setcheckFormationContenuPermisCotier,setcheckFormationContenuCRR,setcheckFormationContenuPermisFluvial,setcheckFormationContenuGrandePlaisance,setcheckFormationContenuPermisHautier):setcheckFormationContenuPermisCotier(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisCotier===true?'checkTrue':'checkFalse'}></img>
+                                    </div>
+                                </div>
+                                <div className='checkBoxFormation'id='checkBoxFormationSuper'>
+                                    <p>Permis fluvial</p>
+                                    <div className={checkFormationContenuPermisFluvial===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisFluvial==false?oneOrTheOtherFour(setcheckFormationContenuPermisFluvial,setcheckFormationContenuCRR,setcheckFormationContenuPermisCotier,setcheckFormationContenuGrandePlaisance,setcheckFormationContenuPermisHautier):setcheckFormationContenuPermisFluvial(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisFluvial===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation'>
+                                    <p>CRR</p>
+                                    <div className={checkFormationContenuCRR===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuCRR==false?oneOrTheOtherFour(setcheckFormationContenuCRR,setcheckFormationContenuPermisCotier,setcheckFormationContenuPermisFluvial,setcheckFormationContenuGrandePlaisance,setcheckFormationContenuPermisHautier):setcheckFormationContenuCRR(false)}}>
+                                        <img src={check} className={checkFormationContenuCRR===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkhauturier'>
+                                    <p>Permis hauturier</p>
+                                    <div className={checkFormationContenuPermisHautier===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuPermisHautier==false?oneOrTheOtherFour(setcheckFormationContenuPermisHautier,setcheckFormationContenuCRR,setcheckFormationContenuPermisFluvial,setcheckFormationContenuGrandePlaisance,setcheckFormationContenuPermisCotier):setcheckFormationContenuPermisHautier(false)}}>
+                                        <img src={check} className={checkFormationContenuPermisHautier===true?'checkTrue':'checkFalse'}></img>
+                                    </div> 
+                                </div>
+                                <div className='checkBoxFormation' id='checkplaisance'>
+                                    <p>Permis grande plaisance</p>
+                                    <div className={checkFormationContenuGrandePlaisance===true?'checkBoxTrueFormation':'checkBoxFalseFormation'} onClick={()=>{checkFormationContenuGrandePlaisance==false?oneOrTheOtherFour(setcheckFormationContenuGrandePlaisance,setcheckFormationContenuCRR,setcheckFormationContenuPermisFluvial,setcheckFormationContenuPermisCotier,setcheckFormationContenuPermisHautier):setcheckFormationContenuGrandePlaisance(false)}}>
+                                        <img src={check} className={checkFormationContenuGrandePlaisance===true?'checkTrue':'checkFalse'}></img>
                                     </div> 
                                 </div>
                             </div>

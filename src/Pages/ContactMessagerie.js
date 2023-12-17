@@ -1,6 +1,6 @@
 import "../css/ContactMessagerie.css"
 import '../css/Profil.css'
-import SocketIo from 'socket.io-client'
+import {io} from 'socket.io-client'
 import arrow from '../images/iconsAwesome/arrow-right-solid.svg'
 import Loupe from '../images/iconsAwesome/magnifying-glass-solid.svg'
 import Plane from '../images/iconsAwesome/paper-plane-solid.svg'
@@ -11,9 +11,10 @@ import { useEffect,useState,ChangeEvent,useContext } from 'react'
 import {InscriptionContext as getConnectedUser} from '../utilitaires/InscriptionContext'
 import Navbar from '../component/Navbar';
 import axios from 'axios';
+import { socket as IO } from '../utilitaires/connexionSocketIO'
 //const socket = SocketIo.connect('http://localhost:4000');
-const socket = SocketIo.connect("https://toutpermisback-production.up.railway.app");
-
+//const socket = io.connect("https://toutpermisback-production.up.railway.app");
+const socket=IO
 
 const ContactMessagerie=({socket})=>{
     let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
@@ -97,6 +98,8 @@ const ContactMessagerie=({socket})=>{
         setNomEmetteur(res.data.Prenom)
         setMapConv(true)
         console.log("je suis bien rentrée dans le fetch de la socket")
+        console.log(connectedUser,"je devrais être sortie de cette fucking messagerie!")
+       if(document.getElementById('ConvId').clientHeight != null){ 
         setTimeout(() => {
             let clientHeightConv = document.getElementById('ConvId').clientHeight
             console.log(`${clientHeightConv} c'est la hauteur de la conv dans le get`)
@@ -110,7 +113,7 @@ const ContactMessagerie=({socket})=>{
               else{
                 console.log("tout va bien")
               }
-        }, 200);
+        }, 200);}
         })
         .catch((err) => console.error(err));
         })
@@ -250,6 +253,7 @@ const ContactMessagerie=({socket})=>{
         console.log(ConvOn)
         console.log(`${ChangeHeigthConv} c'est la variable pour changer la taille`)
         console.log(`${connectedUser} je garde bien cette info après reboot`)
+        
     })
 
     const handleSendMessage = (e) => {
@@ -302,7 +306,8 @@ const ContactMessagerie=({socket})=>{
       if(WriteON===true){
         setDisplayFooter(true)
       }
-      setTimeout(() => {
+    
+        setTimeout(() => {
         let clientHeightConv = document.getElementById('ConvId').clientHeight
         console.log(`${clientHeightConv} c'est la hauteur de la conv dans le get`)
         ScrollEnding(clientHeightConv)
