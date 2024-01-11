@@ -40,7 +40,7 @@ const Autorisation=()=>{
                     <img src={superHero} className="superHeroPopup"></img>
                     <div className='pFelicitation'>
                         <p className='pColorCanard'>In Progress</p>
-                        <p style={{textAlign:"center"}}>Cette Application est en cours de développement et nécessite un code d'accès<br></br>
+                        <p style={{textAlign:"center"}}>ToutPermis est en cours de développement et nécessite un code d'accès<br></br>
                         dont vous pouvez faire la demande par mail </p>
                     </div>
                 </div>
