@@ -20,6 +20,7 @@ import heros from '../images/CODEO_016_002-removebg-preview.png'
 import Navbar from '../component/Navbar';
 import { useState,useEffect } from 'react';
 import { Link, Navigate,useNavigate } from 'react-router-dom';
+import Autorisation from '../component/Autorisation';
 
 
 
@@ -33,6 +34,7 @@ function LandingPage() {
   return (
     <div className="App">
       <Navbar />
+      <Autorisation/>
      <main>
         <div className='paraTrouve2'>
         <p className="ligne7">Trouve le</p>

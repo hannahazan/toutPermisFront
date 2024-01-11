@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom'
 
 const Fiche=()=>{
     const{choice,connectedUser,Adresse,assignAdresse,AdresseValue,assignAdresseValue,Longitude,assignLongitude,Lattitude,assignLattitude,IdFiche,assignIdFiche}=useContext(getConnectedUser)
-    let ApifetchDeploy="https://toutpermisback-production.up.railway.app"/*'http://localhost:5000'*/
+    let ApifetchDeploy="https://toutpermisback-production.up.railway.app" //'http://localhost:5000'
     console.log(connectedUser)
     const [uploadCouv, setUploadCouv] = useState(null)
     const [uploadLogo,setUploadLogo]=useState(null)
@@ -1425,7 +1425,7 @@ const ContactModif=()=>{console.log('dans le contact')
      
      axios
      .post(`${ApifetchDeploy}/FicheEcolePrincipale/test`,{EcoleNameId:EcoleNameId,EcoleName:EcoleName,UserPseudo:connectedUser,MailContact:MailContact,PhoneNumber:PhoneNumber
-        ,SiteWeb:SiteWeb 
+        ,SiteWeb:SiteWeb,Pro:choice
     })
      .then((response)=>{(console.log(response.data))
         getFicheFirst()
