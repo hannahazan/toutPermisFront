@@ -19,7 +19,7 @@ const InscriptionFinale=()=>{
     const[Ecole,setEcole]=useState(Boolean)
     const[Medecin,setMedecin]=useState(Boolean)
     const[amenageur,setAmenageur]=useState(Boolean)
-    let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
+    let ApifetchDeploy=process.env.REACT_APP_FETCH_BACK_PROD //process.env.REACT_APP_FETCH_BACK_LOCAL
     const navigate=useNavigate()
     useEffect(()=>{
         setPath(window.location.pathname)

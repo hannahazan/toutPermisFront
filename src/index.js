@@ -18,10 +18,9 @@ import { useEffect,useState,useContext } from 'react';
 import Navbar from './component/Navbar';
 import Localisation from './component/Localisation.js';
 import EditBlog from './Pages/EditBlog';
-import Messagerie from './Pages/Messagerie';
 import ContactMessagerie from './Pages/ContactMessagerie';
 import socketIO from 'socket.io-client';
-import TestDeploy from './Pages/testDeploy.js';
+
 import InProgress from './Pages/Inprogress';
 import { socket as IO } from './utilitaires/connexionSocketIO.js'
 
@@ -57,7 +56,6 @@ root.render(
           <Route path='/espacepro/inscriptionChoix/inscriptionFinale/profil/Fiche' exact element={<Fiche/>}></Route>
           <Route path='/connexion' element={<Connexion/>}></Route>
           <Route path='/EditBlog' element={<EditBlog/>}></Route>
-          <Route path='/testDeploy' element={<TestDeploy/>}></Route>
           <Route path='/ContactMessagerie' element={<ContactMessagerie socket={socket}/>}></Route>
       </Routes>
     </InscriptionProvider>

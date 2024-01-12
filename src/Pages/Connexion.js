@@ -12,8 +12,7 @@ const Connexion=()=>{
 
     const [password,setpassword]=useState("")
     const navigate=useNavigate()
-    let ApiFetchLocal="http://localhost:5000"
-    let ApifetchDeploy="https://toutpermisback-production.up.railway.app"
+    let ApifetchDeploy=process.env.REACT_APP_FETCH_BACK_PROD//process.env.REACT_APP_FETCH_BACK_LOCAL
 
     const onSubmit=()=>{
         axios
