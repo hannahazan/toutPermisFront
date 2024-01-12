@@ -12,25 +12,17 @@ import '../css/Fiche.css'
 import SocketIo from 'socket.io-client'
 import { Link, Navigate,useNavigate } from 'react-router-dom'
 
+
 const Autorisation=()=>{
     const[Path,setPath]=useState('')
     const[Close,setClose]=useState(false)
     const[FromProfile,setFromProfile]=useState(false)
     const[accès,setAccès]=useState("")
-    const regex=new RegExp('profil*')
-    useEffect(()=>{
-        setPath(window.location.pathname)
-        console.log(Path,"le chemin")
-        setFromProfile(regex.test(Path))
-        console.log(FromProfile,"le chemin boolean")
-    })
-
-    const navigate=useNavigate()
-
+    const code=process.env.REACT_APP_CODE_ACCES_STEPH
     return(
         
         <div>
-           { accès!="Bhgejbfeziob26985"?
+           { accès!=code?
            <div className="containerPopup">
                 <div className='containerLogoImgFelicitation'>
                     <div className="pictoLogoEspaceProPopup">
