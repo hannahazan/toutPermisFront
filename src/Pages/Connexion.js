@@ -13,6 +13,7 @@ const Connexion=()=>{
     const [password,setpassword]=useState("")
     const navigate=useNavigate()
     let ApifetchDeploy=process.env.REACT_APP_FETCH_BACK_PROD//process.env.REACT_APP_FETCH_BACK_LOCAL
+    console.log("test utilisateur")
 
     const onSubmit=()=>{
         axios
